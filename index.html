@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Viagens | Clebert Rocha | Agência de Viagens</title>
+  <meta name="description" content="LC Viagens — Pacotes nacionais e internacionais com atendimento personalizado. Entre em contato com Clebert Rocha." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/database.js"></script>
+  <script src="editor.js?v=1" defer></script>
+</head>
+<body>
+
+  <!-- TOP HEADER PREMIUM -->
+  <div class="top-header" style="background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; position: relative;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,36,71,0.95) 0%, rgba(15,36,71,0.4) 100%);"></div>
+    <div class="container top-header-inner" style="position: relative; z-index: 2;">
+      <div class="team-brand">
+        <div class="round-photo-wrap">
+          <img src="imagens/logo_lc.jfif" onerror="this.src='https://ui-avatars.com/api/?name=LC+Viagens&background=E05220&color=fff&size=200&bold=true&rounded=true'"
+               alt="LC Viagens" class="round-photo" data-eid="team-photo" data-elabel="Foto Redonda Equipe" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-welcome" data-eid="top-text-1" data-elabel="Texto Superior 1">Viaje com Clebert Rocha</span>
+          <span class="brand-tagline" data-eid="top-text-2" data-elabel="Texto Superior 2">LC Viagens ✈</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAV -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+          <img src="imagens/logo_lc.jfif"
+             alt="LC Viagens" class="logo-img"
+             data-eid="logo" data-elabel="Logo" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#pacotes" class="nav-link">Pacotes</a>
+        <a href="#orcamento" class="nav-link">Orçamento</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#contato" class="nav-link nav-cta" id="nav-cta-btn">Fale Conosco</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge" data-eid="hero-badge" data-elabel="Badge Hero">✈ Agência de Viagens · LC Viagens</div>
+      <h1 class="hero-title" data-eid="hero-title" data-elabel="Título Hero">
+        Sua próxima aventura<br />começa <span class="hero-accent">aqui</span>
+      </h1>
+      <p class="hero-sub" data-eid="hero-sub" data-elabel="Subtítulo Hero">Pacotes nacionais e internacionais com toda a facilidade que você merece. Atendimento personalizado com Clebert Rocha.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5582988017594?text=Olá%2C+gostaria+de+saber+mais+sobre+os+pacotes+da+LC+Viagens!" class="btn btn-primary" target="_blank" rel="noopener" data-eid="hero-cta-wa" data-elabel="Botão WhatsApp Hero">
+          💬 WhatsApp Agora
+        </a>
+        <a href="#pacotes" class="btn btn-outline" data-eid="hero-cta-pacotes" data-elabel="Botão Ver Pacotes">Ver Pacotes</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-eid="hero-stat1-icon" data-elabel="Stat 1 – Ícone">🌍</span>
+          <span class="stat-label" data-eid="hero-stat1-txt" data-elabel="Stat 1 – Texto">Destinos no mundo todo</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-eid="hero-stat2-icon" data-elabel="Stat 2 – Ícone">✈</span>
+          <span class="stat-label" data-eid="hero-stat2-txt" data-elabel="Stat 2 – Texto">Voos nacionais e internacionais</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-eid="hero-stat3-icon" data-elabel="Stat 3 – Ícone">🏆</span>
+          <span class="stat-label" data-eid="hero-stat3-txt" data-elabel="Stat 3 – Texto">Pacotes completos</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll"><span class="scroll-dot"></span></div>
+  </section>
+
+  <!-- PACOTES -->
+  <section class="section pacotes-section" id="pacotes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-eid="pacotes-tag" data-elabel="Tag Seção Pacotes">✈ Pacotes em Destaque</span>
+        <h2 class="section-title" data-eid="pacotes-titulo" data-elabel="Título Seção Pacotes">Explore o Brasil e o Mundo</h2>
+        <p class="section-sub" data-eid="pacotes-sub" data-elabel="Subtítulo Seção Pacotes">Pacotes completos com aéreo, hotel, transfers e passeios. Parcele em até 10x sem juros.</p>
+      </div>
+
+      <!-- ABAS DE CATEGORIA -->
+      <div class="pkg-tabs" id="pkg-tabs">
+        <button class="pkg-tab active" data-cat="nacional" id="tab-nacional">🇧🇷 Nacional</button>
+        <button class="pkg-tab" data-cat="internacional" id="tab-internacional">🌍 Internacional</button>
+      </div>
+
+      <div class="cards-grid" id="cards-grid">
+        <!-- Pacotes carregados dinamicamente pelo js/database.js -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function initPackages() {
+    const grid = document.getElementById('cards-grid');
+    const tabs = document.querySelectorAll('.pkg-tab');
+    let removedCards = [];
+
+    const srvCms = window.__LC_SRV_CMS || {};
+    if (srvCms.__removed_cards) removedCards = srvCms.__removed_cards;
+
+    function buildCard(id, p) {
+      const thumb = (typeof THUMB !== 'undefined' && THUMB[id]) ? THUMB[id] : (p.images && p.images[0]) || 'imagens/balneario_camboriu.png';
+      const badgeCls = p.badge && p.badge.includes('💎') ? 'card-badge--premium' : p.badge && p.badge.includes('⭐') ? 'card-badge--popular' : 'card-badge--hot';
+      const incItems = (p.incluso || []).slice(0, 5).map(i => `<li>${i}</li>`).join('');
+      const article = document.createElement('article');
+      article.className = 'card';
+      article.id = 'card-' + id;
+      article.addEventListener('click', function(e) {
+        if (document.body.classList.contains('go-on')) return;
+        location.href = 'pacote.html?id=' + id;
+      });
+      article.style.cursor = 'pointer';
+      article.innerHTML = `
+        <div class="card-img-wrap">
+          <img src="${thumb}" alt="${p.title}" class="card-img" loading="lazy"
+               data-eid="img-${id}" data-elabel="Foto – ${p.title}" />
+          <div class="card-badge ${badgeCls}" data-eid="badge-${id}" data-elabel="Badge – ${p.title}">${p.badge || ''}</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dest" data-eid="dest-${id}" data-elabel="Destino – ${p.title}">${p.location}</div>
+          <h3 class="card-title" data-eid="titulo-${id}" data-elabel="Título – ${p.title}">${p.title}</h3>
+          <ul class="card-includes" data-eid="incluso-${id}" data-elabel="Inclusos – ${p.title}">${incItems}</ul>
+          <div class="card-dates" data-eid="data-${id}" data-elabel="Datas – ${p.title}">${p.dates || ''}</div>
+          <div class="card-price-block">
+            <div class="card-pix" data-eid="pix-${id}" data-elabel="Preço Cartão – ${p.title}">No cartão: <strong>R$ ${p.priceCartao}</strong></div>
+            <div class="card-parcel" data-eid="parcel-${id}" data-elabel="Parcela – ${p.title}">${p.parcelas}</div>
+          </div>
+          <a href="pacote.html?id=${id}" class="btn btn-card">Ver detalhes completos →</a>
+        </div>`;
+      return article;
+    }
+
+    function renderCat(cat) {
+      grid.innerHTML = '';
+      const cms = JSON.parse(localStorage.getItem('lc_cms_v1') || '{}');
+      const srvCms = window.__LC_SRV_CMS || {};
+      if (srvCms.__db_overrides && typeof DB !== 'undefined') {
+        Object.entries(srvCms.__db_overrides).forEach(([pkgId, ov]) => {
+          if (DB[pkgId]) Object.assign(DB[pkgId], ov);
+        });
+      }
+      Object.entries(DB).forEach(([id, p]) => {
+        if ((p.category || 'nacional') !== cat) return;
+        if (removedCards.includes('card-' + id) || removedCards.includes('card-new-' + id)) return;
+        const card = buildCard(id, p);
+        grid.appendChild(card);
+        ['pix','parcel','dest','titulo','badge','data','incluso','img'].forEach(field => {
+          const eid = field + '-' + id;
+          const el = card.querySelector(`[data-eid="${eid}"]`);
+          if (!el) return;
+          if (cms[eid]) {
+            if (field === 'img' && cms[eid].src) el.src = cms[eid].src;
+            else if (cms[eid].html !== undefined) el.innerHTML = cms[eid].html;
+            if (cms[eid].style) Object.assign(el.style, cms[eid].style);
+          }
+        });
+      });
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => renderCat(tab.dataset.cat));
+    });
+
+    renderCat('nacional');
+  })();
+  </script>
+
+  <!-- SOBRE -->
+  <section class="section sobre-section" id="sobre">
+    <div class="container sobre-inner">
+      <div class="sobre-img-col">
+        <div class="sobre-img-wrap">
+          <img src="imagens/lc_foto2.jpg"
+               alt="LC Viagens – Clebert Rocha" class="sobre-img" loading="lazy"
+               data-eid="sobre-foto" data-elabel="Foto – Equipe Sobre" />
+          <div class="sobre-img-badge" data-eid="sobre-badge" data-elabel="Badge – Localização">🗺 Alagoas · AL</div>
+        </div>
+      </div>
+      <div class="sobre-text-col">
+        <span class="section-tag" data-eid="sobre-tag" data-elabel="Tag – Sobre">Conheça a agência</span>
+        <h2 class="section-title sobre-title" data-eid="sobre-titulo" data-elabel="Título – Sobre">Somos a <span class="orange">LC Viagens!</span></h2>
+        <p class="sobre-p" data-eid="sobre-p1" data-elabel="Parágrafo 1 – Sobre">Sou Clebert Rocha, agente de viagem apaixonado por proporcionar experiências únicas e inesquecíveis. Com dedicação e comprometimento, ofereço atendimento personalizado para cada cliente, garantindo a melhor viagem possível.</p>
+        <p class="sobre-p" data-eid="sobre-p2" data-elabel="Parágrafo 2 – Sobre">Nossa missão é tornar cada viagem especial — seja uma escapada nacional ou o sonho de conhecer o mundo. Atendimento personalizado, preços competitivos e total tranquilidade do início ao fim. Empresa registrada no CADASTUR.</p>
+        <div class="sobre-features">
+          <div class="feature-item">
+            <span class="feature-icon" data-eid="sobre-feat1-icon" data-elabel="Ícone Diferencial 1">🤝</span>
+            <div data-eid="sobre-feat1-txt" data-elabel="Texto Diferencial 1"><strong>Atendimento personalizado</strong><br>Cada cliente é único, com necessidades próprias</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" data-eid="sobre-feat2-icon" data-elabel="Ícone Diferencial 2">💳</span>
+            <div data-eid="sobre-feat2-txt" data-elabel="Texto Diferencial 2"><strong>Facilidade de pagamento</strong><br>Até 10x no cartão sem juros + 5% de desconto no Pix</div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" data-eid="sobre-feat3-icon" data-elabel="Ícone Diferencial 3">✅</span>
+            <div data-eid="sobre-feat3-txt" data-elabel="Texto Diferencial 3"><strong>Segurança e confiança</strong><br>Empresa registrada no CADASTUR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAS DE PAGAMENTO -->
+  <section class="pagamento-section">
+    <div class="container">
+      <div class="pagamento-inner">
+        <div class="pagamento-col">
+          <h3 class="pagamento-title" data-eid="pag-titulo" data-elabel="Título Pagamento">💳 Formas de Pagamento</h3>
+          <div class="pagamento-items">
+            <div class="pag-item" data-eid="pag-item1" data-elabel="Forma de Pagamento 1">
+              <strong>Cartão de Crédito</strong>
+              <span>Até 10x iguais sem juros (parcela mín. R$ 150). Aceito até 2 cartões de mesma titularidade.</span>
+            </div>
+            <div class="pag-item" data-eid="pag-item2" data-elabel="Forma de Pagamento 2">
+              <strong>PIX / À vista 🎉 5% OFF</strong>
+              <span>5% de desconto sobre o valor total. Liberação imediata do voucher.</span>
+            </div>
+            <div class="pag-item" data-eid="pag-item3" data-elabel="Forma de Pagamento 3">
+              <strong>Boleto Bancário</strong>
+              <span>Entrada 25% + saldo em até 9x. Embarque mínimo 45 dias após contratação.</span>
+            </div>
+          </div>
+        </div>
+        <div class="pagamento-col pagamento-col--bandeiras">
+          <h3 class="pagamento-title" data-eid="bandeiras-titulo" data-elabel="Título Bandeiras">Bandeiras aceitas</h3>
+          <div class="bandeiras" data-eid="bandeiras-lista" data-elabel="Lista de Bandeiras">
+            <span class="bandeira">Visa</span>
+            <span class="bandeira">Mastercard</span>
+            <span class="bandeira">Elo</span>
+            <span class="bandeira">Amex</span>
+            <span class="bandeira">Diners</span>
+            <span class="bandeira">Hipercard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORÇAMENTO -->
+  <section class="section budget-section" id="orcamento">
+    <div class="container">
+      <div class="budget-card">
+        <div class="budget-info">
+          <span class="section-tag" data-eid="budget-tag" data-elabel="Tag Orçamento">📝 Solicite agora</span>
+          <h2 class="section-title" data-eid="budget-titulo" data-elabel="Título Orçamento">Peça seu Orçamento Personalizado</h2>
+          <p class="section-sub" data-eid="budget-sub" data-elabel="Subtítulo Orçamento">Preencha os dados abaixo e entraremos em contato com as melhores opções para sua viagem.</p>
+        </div>
+        <form id="budget-form" class="budget-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="b-nome">Nome Completo</label>
+              <input type="text" id="b-nome" placeholder="Ex: Maria Silva" required />
+            </div>
+            <div class="form-group">
+              <label for="b-whatsapp">WhatsApp</label>
+              <input type="tel" id="b-whatsapp" placeholder="(82) 99999-9999" required />
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="b-email">E-mail</label>
+              <input type="email" id="b-email" placeholder="seu@email.com" required />
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="b-destino">Destino</label>
+              <select id="b-destino" required style="width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-family: inherit; font-size: 1rem; color: #1f2937; background-color: #f9fafb;">
+                <option value="">Selecione...</option>
+                <option value="Maceió">Maceió</option>
+                <option value="Balneário Camboriú">Balneário Camboriú</option>
+                <option value="Gramado">Gramado</option>
+                <option value="Curitiba">Curitiba</option>
+                <option value="Porto Seguro">Porto Seguro</option>
+                <option value="Bariloche">Bariloche</option>
+                <option value="Europa">Europa</option>
+                <option value="Outro Destino">Outro Destino</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="b-adultos">Nº de Viajantes (Adultos)</label>
+              <input type="number" id="b-adultos" min="1" value="2" required />
+            </div>
+            <div class="form-group">
+              <label>Vai com crianças?</label>
+              <div style="display:flex;gap:12px;margin-top:8px;">
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="b-criancas" value="sim" onchange="document.getElementById('b-criancas-idade').style.display='block'" style="width:auto;height:auto;margin:0;"> Sim</label>
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="b-criancas" value="nao" checked onchange="document.getElementById('b-criancas-idade').style.display='none'" style="width:auto;height:auto;margin:0;"> Não</label>
+              </div>
+            </div>
+            <div class="form-group" id="b-criancas-idade" style="display:none; grid-column: 1 / -1;">
+              <label for="b-idades">Idade das crianças</label>
+              <input type="text" id="b-idades" placeholder="Ex: 5 e 8 anos" />
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="b-data">Data Aproximada</label>
+              <input type="text" id="b-data" placeholder="Ex: Julho/2026" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="b-obs">Alguma observação? (Opcional)</label>
+            <textarea id="b-obs" rows="3" placeholder="Ex: Viagem de casal, hotel com piscina..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            🚀 Solicitar Orçamento via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section contato-section" id="contato">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-eid="contato-tag" data-elabel="Tag Seção Contato">📞 Fale com a gente</span>
+        <h2 class="section-title" data-eid="contato-titulo" data-elabel="Título Seção Contato">Entre em Contato</h2>
+        <p class="section-sub" data-eid="contato-sub" data-elabel="Subtítulo Seção Contato">Estamos prontos para montar o pacote perfeito para você. Resposta rápida via WhatsApp!</p>
+      </div>
+      <div class="contato-grid">
+        <div class="contato-card" id="contato-wpp">
+          <div class="contato-icon" data-eid="contato-wpp-icon" data-elabel="Ícone WhatsApp">💬</div>
+          <h3 class="contato-card-title" data-eid="contato-wpp-titulo" data-elabel="Título WhatsApp">WhatsApp</h3>
+          <p class="contato-info" data-eid="contato-wpp-numero" data-elabel="Número WhatsApp">(82) 98801-7594</p>
+          <a href="https://wa.me/5582988017594?text=Olá%2C+gostaria+de+saber+mais+sobre+os+pacotes+da+LC+Viagens!" class="btn btn-primary contato-btn" target="_blank" rel="noopener" data-eid="contato-wpp-btn" data-elabel="Botão WhatsApp">Abrir WhatsApp</a>
+        </div>
+        <div class="contato-card" id="contato-insta">
+          <div class="contato-icon" data-eid="contato-insta-icon" data-elabel="Ícone Instagram">📸</div>
+          <h3 class="contato-card-title" data-eid="contato-insta-titulo" data-elabel="Título Instagram">Instagram</h3>
+          <p class="contato-info" data-eid="contato-insta-user" data-elabel="Instagram">@lc_viagenss</p>
+          <a href="https://instagram.com/lc_viagenss" class="btn btn-outline contato-btn" target="_blank" rel="noopener" data-eid="contato-insta-btn" data-elabel="Botão Instagram">Ver Instagram</a>
+        </div>
+        <div class="contato-card" id="contato-email">
+          <div class="contato-icon" data-eid="contato-email-icon" data-elabel="Ícone E-mail">✉️</div>
+          <h3 class="contato-card-title" data-eid="contato-email-titulo" data-elabel="Título E-mail">E-mail</h3>
+          <p class="contato-info" data-eid="contato-email-ende" data-elabel="Endereço E-mail">agencialcviagens@gmail.com</p>
+          <a href="mailto:agencialcviagens@gmail.com" class="btn btn-outline contato-btn" data-eid="contato-email-btn" data-elabel="Botão E-mail">Enviar E-mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo-col">
+        <img src="imagens/logo_lc.jfif" alt="LC Viagens" class="footer-logo"
+             data-eid="footer-logo" data-elabel="Logo – Footer" />
+        <p class="footer-tagline" data-eid="footer-tagline" data-elabel="Tagline – Footer">Sua viagem dos sonhos começa com a LC Viagens! ✈</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/lc_viagenss" class="social-link" target="_blank" rel="noopener" data-eid="footer-instagram" data-elabel="Link Instagram – Footer">📸 @lc_viagenss</a>
+          <a href="https://wa.me/5582988017594" class="social-link" target="_blank" rel="noopener" data-eid="footer-whatsapp" data-elabel="Link WhatsApp – Footer">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-heading" data-eid="footer-col2-titulo" data-elabel="Título Coluna 2 – Footer">Destinos</h4>
+        <ul class="footer-list">
+          <li><a href="pacote.html?id=milao_bernina" class="footer-link">Milão – Trem Bernina</a></li>
+          <li><a href="pacote.html?id=balneario" class="footer-link">Balneário Camboriú</a></li>
+          <li><a href="pacote.html?id=maceio" class="footer-link">Maceió</a></li>
+          <li><a href="pacote.html?id=gramado" class="footer-link">Gramado</a></li>
+          <li><a href="pacote.html?id=bariloche" class="footer-link">Bariloche</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-heading" data-eid="footer-col3-titulo" data-elabel="Título Coluna 3 – Footer">Internacionais</h4>
+        <ul class="footer-list">
+          <li><a href="pacote.html?id=milao_bernina" class="footer-link">Milão + São Moritz</a></li>
+          <li><a href="pacote.html?id=bariloche" class="footer-link">Bariloche</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-heading" data-eid="footer-col4-titulo" data-elabel="Título Coluna 4 – Footer">Contato</h4>
+        <ul class="footer-list">
+          <li data-eid="footer-endereco" data-elabel="Endereço – Footer">📍 Alagoas · AL</li>
+          <li data-eid="footer-tel1" data-elabel="Telefone 1 – Footer">📞 (82) 98801-7594</li>
+          <li data-eid="footer-email" data-elabel="E-mail – Footer">✉️ agencialcviagens@gmail.com</li>
+          <li data-eid="footer-insta" data-elabel="Instagram – Footer">📸 @lc_viagenss</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-eid="footer-copyright" data-elabel="Copyright – Footer">© 2026 LC Viagens · Clebert Rocha · Todos os direitos reservados</p>
+      <p class="footer-disclaimer" data-eid="footer-disclaimer" data-elabel="Aviso Legal – Footer">Valores sujeitos a alterações. Condicionado à disponibilidade.</p>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <img src="imagens/logo_lc.jfif" alt="LC Viagens" class="mobile-logo" />
+      <button class="close-menu" id="close-menu">&times;</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#inicio" class="mobile-link">✨ Início</a>
+      <a href="#pacotes" class="mobile-link mobile-cat-link" data-cat="nacional">🇧🇷 Nacionais</a>
+      <a href="#pacotes" class="mobile-link mobile-cat-link" data-cat="internacional">🌍 Internacionais</a>
+      <a href="#orcamento" class="mobile-link">📝 Pedir Orçamento</a>
+      <a href="#sobre" class="mobile-link">👥 Sobre Nós</a>
+      <a href="#contato" class="mobile-link">📞 Contato</a>
+    </div>
+    <div class="mobile-menu-footer">
+      <a href="https://wa.me/5582988017594" class="btn btn-primary btn-block">💬 WhatsApp Agora</a>
+    </div>
+  </div>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5582988017594?text=Olá%2C+gostaria+de+saber+mais+sobre+os+pacotes+da+LC+Viagens!" class="wpp-float" target="_blank" rel="noopener" id="wpp-float"
+     data-eid="wpp-float-btn" data-elabel="Botão Flutuante WhatsApp">
+    <span class="wpp-float-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </span>
+    <span class="wpp-float-label">Fale Conosco</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

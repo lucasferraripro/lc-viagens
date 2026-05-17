@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin â€” LC Viagens AgÃªncia de Viagens</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --orange: #E05220; --orange-dark: #c04418;
+            --blue: #22A8C9; --dark: #0f1623;
+        }
+        body {
+            font-family: 'Poppins', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f0f4fa 0%, #e8f4f8 50%, #f4f0fa 100%);
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+            position: relative; overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 80% 20%, rgba(224,82,32,.10) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(34,168,201,.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .card {
+            background: rgba(255,255,255,.98);
+            border-radius: 24px;
+            padding: 48px 40px;
+            width: 100%; max-width: 440px;
+            box-shadow: 0 40px 100px rgba(0,0,0,.4);
+            position: relative; z-index: 1;
+        }
+        .logo-wrap {
+            display: flex; flex-direction: column; align-items: center;
+            margin-bottom: 28px;
+        }
+        .logo-badge {
+            width: 72px; height: 72px; border-radius: 20px;
+            background: linear-gradient(135deg, var(--orange) 0%, #f07040 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin-bottom: 14px;
+            box-shadow: 0 8px 24px rgba(224,82,32,.4);
+        }
+        .logo-title { font-size: 1.6rem; font-weight: 800; color: var(--dark); }
+        .logo-title span { color: var(--orange); }
+        .logo-sub { font-size: .82rem; color: #9ca3af; font-weight: 400; margin-top: 3px; }
+
+        .divider { height: 1px; background: #f0f0f0; margin: 20px 0; }
+
+        .panel-label {
+            font-size: .73rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: .1em; color: #9ca3af; text-align: center; margin-bottom: 22px;
+        }
+
+        .hint {
+            background: #fff7ed; border: 1px solid #fed7aa;
+            border-radius: 12px; padding: 13px 16px;
+            font-size: .82rem; color: #c2410c;
+            margin-bottom: 22px; display: flex; align-items: flex-start; gap: 10px;
+        }
+        .hint i { flex-shrink: 0; margin-top: 2px; }
+
+        .error {
+            background: #fef2f2; border: 1px solid #fca5a5;
+            color: #b91c1c; padding: 12px 14px;
+            border-radius: 10px; font-size: .88rem;
+            margin-bottom: 18px; display: none;
+            align-items: center; gap: 8px;
+        }
+        .field { margin-bottom: 18px; }
+        .field label { display: block; font-size: .82rem; font-weight: 700; color: #374151; margin-bottom: 7px; }
+        .field-wrap { position: relative; }
+        .field input {
+            width: 100%; padding: 13px 44px 13px 16px;
+            border: 2px solid #e5e7eb; border-radius: 12px;
+            font-size: .95rem; outline: none;
+            font-family: 'Poppins', sans-serif;
+            transition: border .2s;
+        }
+        .field input:focus { border-color: var(--orange); }
+        .field-icon {
+            position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+            color: #9ca3af; font-size: .9rem;
+        }
+        .btn-login {
+            width: 100%; padding: 15px;
+            background: var(--orange); color: white;
+            border: none; border-radius: 12px;
+            font-size: 1rem; font-weight: 700; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: all .2s; margin-top: 6px;
+            box-shadow: 0 8px 20px rgba(224,82,32,.35);
+        }
+        .btn-login:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(224,82,32,.4); }
+        .btn-login:disabled { opacity: .7; cursor: not-allowed; transform: none; }
+        .back { margin-top: 22px; text-align: center; }
+        .back a { color: #9ca3af; font-size: .84rem; transition: color .2s; }
+        .back a:hover { color: var(--orange); }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="logo-wrap">
+        <div class="logo-badge">âœˆ</div>
+        <div class="logo-title"><span>321</span> GO!</div>
+        <div class="logo-sub">AgÃªncia de Viagens â€” PatrÃ­cia e Tatiana</div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="panel-label">ðŸ” Painel Administrativo</div>
+
+    <div class="hint">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>Acesso restrito. Use as credenciais de administrador para entrar no modo de ediÃ§Ã£o do site.</span>
+    </div>
+
+    <div class="error" id="error-msg">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span id="error-text">Email ou senha incorretos.</span>
+    </div>
+
+    <form id="login-form" autocomplete="on">
+        <div class="field">
+            <label>Email de acesso</label>
+            <div class="field-wrap">
+                <input type="email" id="email" placeholder="admin@lcviagens.com.br" required autocomplete="username">
+                <i class="fa-solid fa-envelope field-icon"></i>
+            </div>
+        </div>
+        <div class="field">
+            <label>Senha</label>
+            <div class="field-wrap">
+                <input type="password" id="senha" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required autocomplete="current-password">
+                <i class="fa-solid fa-lock field-icon"></i>
+            </div>
+        </div>
+        <button type="submit" class="btn-login" id="btn-login">
+            <i class="fa-solid fa-lock-open"></i> Entrar no Editor
+        </button>
+    </form>
+
+    <div class="back">
+        <a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao site</a>
+    </div>
+</div>
+
+<script>
+    /* â”€â”€ CONSTANTES (DEVEM SER IDÃŠNTICAS AO editor.js) â”€â”€ */
+    const AUTH_EMAIL = 'admin@lcviagens.com.br';
+    const ADMIN_KEY  = 'lc_auth';   // IDÃŠNTICO ao editor.js
+    const SECRET_KEY = 'lc_secret'; // IDÃŠNTICO ao editor.js
+
+    /* Senha de fallback local (mesma do api/auth.js) */
+    const LOCAL_SECRET = 'LCViagens@2026';
+
+    /* Detecta ambiente local (file:// ou localhost) */
+    const isLocal = location.protocol === 'file:'
+                 || location.hostname === 'localhost'
+                 || location.hostname === '127.0.0.1';
+
+    /* Se jÃ¡ autenticado e sessÃ£o vÃ¡lida â†’ redireciona direto
+       Usa localStorage porque file:// no Chrome trata cada pasta como origem
+       diferente, fazendo sessionStorage nÃ£o persistir entre pÃ¡ginas. */
+    try {
+        const saved = JSON.parse(localStorage.getItem(ADMIN_KEY) || 'null');
+        if (saved && saved.expires > Date.now()) {
+            window.location.href = '../index.html?editor=1';
+        }
+    } catch (_) { localStorage.removeItem(ADMIN_KEY); }
+
+    /* â”€â”€ SUBMIT â”€â”€ */
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email  = document.getElementById('email').value.trim().toLowerCase();
+        const senha  = document.getElementById('senha').value;
+        const btn    = document.getElementById('btn-login');
+        const errEl  = document.getElementById('error-msg');
+        const errTxt = document.getElementById('error-text');
+
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Verificando...';
+        btn.disabled  = true;
+        errEl.style.display = 'none';
+
+        /* Valida e-mail antes de tudo */
+        if (email !== AUTH_EMAIL) {
+            errTxt.textContent = 'Email nÃ£o reconhecido.';
+            errEl.style.display = 'flex';
+            btn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Entrar no Editor';
+            btn.disabled = false;
+            return;
+        }
+
+        /* â”€â”€ Modo LOCAL: valida direto no cliente â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        if (isLocal) {
+            await new Promise(r => setTimeout(r, 600)); // simula latÃªncia
+            if (senha === LOCAL_SECRET) {
+                localStorage.setItem(ADMIN_KEY, JSON.stringify({
+                    email,
+                    ts:      Date.now(),
+                    expires: Date.now() + 8 * 60 * 60 * 1000
+                }));
+                localStorage.setItem(SECRET_KEY, senha);
+                window.location.href = '../index.html?editor=1';
+            } else {
+                errTxt.textContent = 'Senha incorreta. Tente novamente.';
+                errEl.style.display = 'flex';
+                btn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Entrar no Editor';
+                btn.disabled = false;
+            }
+            return;
+        }
+
+        /* â”€â”€ Modo VERCEL: valida via API /api/auth â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        try {
+            const res  = await fetch('/api/auth', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ secret: senha })
+            });
+            const data = await res.json();
+
+            if (data.ok) {
+                localStorage.setItem(ADMIN_KEY, JSON.stringify({
+                    email,
+                    ts:      Date.now(),
+                    expires: Date.now() + 8 * 60 * 60 * 1000
+                }));
+                localStorage.setItem(SECRET_KEY, senha);
+                window.location.href = '/index.html?editor=1';
+            } else {
+                errTxt.textContent = 'Senha incorreta. Tente novamente.';
+                errEl.style.display = 'flex';
+                btn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Entrar no Editor';
+                btn.disabled  = false;
+            }
+        } catch (err) {
+            errTxt.textContent = 'Erro de conexÃ£o: ' + (err.message || 'verifique sua internet.');
+            errEl.style.display = 'flex';
+            btn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Entrar no Editor';
+            btn.disabled  = false;
+        }
+    });
+</script>
+</body>
+</html>
+
