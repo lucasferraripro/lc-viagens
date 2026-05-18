@@ -35,9 +35,7 @@
   <header class="header" id="header">
     <div class="container header-inner">
       <a href="index.html" class="logo-link">
-          <img src="imagens/logo_lc.jfif"
-             alt="LC Viagens" class="logo-img"
-             data-eid="logo" data-elabel="Logo" />
+        <span class="logo-text-brand" data-eid="logo" data-elabel="Logo">LC Viagens</span>
       </a>
       <nav class="nav" id="nav">
         <a href="#inicio" class="nav-link">Início</a>
@@ -97,7 +95,8 @@
 
       <!-- ABAS DE CATEGORIA -->
       <div class="pkg-tabs" id="pkg-tabs">
-        <button class="pkg-tab active" data-cat="nacional" id="tab-nacional">🇧🇷 Nacional</button>
+        <button class="pkg-tab active" data-cat="todos" id="tab-todos">✈ Todos</button>
+        <button class="pkg-tab" data-cat="nacional" id="tab-nacional">🇧🇷 Nacional</button>
         <button class="pkg-tab" data-cat="internacional" id="tab-internacional">🌍 Internacional</button>
       </div>
 
@@ -158,7 +157,7 @@
         });
       }
       Object.entries(DB).forEach(([id, p]) => {
-        if ((p.category || 'nacional') !== cat) return;
+        if (cat !== 'todos' && (p.category || 'nacional') !== cat) return;
         if (removedCards.includes('card-' + id) || removedCards.includes('card-new-' + id)) return;
         const card = buildCard(id, p);
         grid.appendChild(card);
@@ -180,7 +179,7 @@
       tab.addEventListener('click', () => renderCat(tab.dataset.cat));
     });
 
-    renderCat('nacional');
+    renderCat('todos');
   })();
   </script>
 
@@ -189,10 +188,9 @@
     <div class="container sobre-inner">
       <div class="sobre-img-col">
         <div class="sobre-img-wrap">
-          <img src="imagens/lc_foto2.jpg"
+          <img src="EMPRESA.png"
                alt="LC Viagens – Clebert Rocha" class="sobre-img" loading="lazy"
                data-eid="sobre-foto" data-elabel="Foto – Equipe Sobre" />
-          <div class="sobre-img-badge" data-eid="sobre-badge" data-elabel="Badge – Localização">🗺 Alagoas · AL</div>
         </div>
       </div>
       <div class="sobre-text-col">

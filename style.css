@@ -46,7 +46,7 @@ ul { list-style: none; }
 }
 .top-header-inner { display: flex; align-items: center; justify-content: space-between; }
 .team-brand { display: flex; align-items: center; gap: 15px; }
-.round-photo-wrap { width: 70px; height: 70px; border-radius: 50%; border: 3px solid var(--gold); overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); background: var(--dark-2); display: flex; align-items: center; justify-content: center; }
+.round-photo-wrap { width: 70px; height: 70px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.25); overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); background: var(--dark-2); display: flex; align-items: center; justify-content: center; }
 .round-photo { width: 100%; height: 100%; object-fit: cover; }
 .brand-text { display: flex; flex-direction: column; }
 .brand-welcome { font-size: 0.9rem; font-weight: 500; opacity: 0.9; }
@@ -57,7 +57,9 @@ ul { list-style: none; }
 .header.scrolled { background: rgba(255,255,255,.98); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 52px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,.12)); }
+.logo-img { height: 52px; width: 52px; object-fit: cover; border-radius: 50%; filter: drop-shadow(0 2px 8px rgba(0,0,0,.12)); }
+/* Logo texto no header (substitui imagem duplicada) */
+.logo-text-brand { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--orange); letter-spacing: -0.5px; }
 .nav { display: flex; align-items: center; gap: 8px; }
 .nav-link { padding: 8px 14px; border-radius: 8px; font-size: .9rem; font-weight: 500; color: var(--text-2); transition: var(--transition); }
 .nav-link:hover { color: var(--blue); background: rgba(27,108,168,.06); }
@@ -142,9 +144,9 @@ ul { list-style: none; }
 .sobre-section { background: var(--bg); position: relative; }
 .sobre-section::before { content: ''; position: absolute; top: 0; right: 0; width: 500px; height: 500px; background: radial-gradient(circle, rgba(27,108,168,.07) 0%, transparent 70%); border-radius: 50%; transform: translate(30%, -30%); pointer-events: none; }
 .sobre-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
-.sobre-img-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; align-items: center; }
+.sobre-img-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; align-items: center; aspect-ratio: 4 / 5; max-height: 560px; background: var(--text); }
 .sobre-img-wrap::before { content: ''; position: absolute; inset: -2px; border-radius: 26px; background: linear-gradient(135deg, rgba(27,108,168,.3), rgba(245,166,35,.2)); z-index: -1; }
-.sobre-img { width: 100%; height: 360px; object-fit: contain; background: linear-gradient(135deg, var(--bg-3) 0%, #e0ecf8 100%); padding: 32px; }
+.sobre-img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; display: block; }
 .sobre-img-badge { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%); color: #fff; padding: 8px 16px; border-radius: 50px; font-size: .82rem; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 16px rgba(27,108,168,.35); }
 .sobre-title { margin-bottom: 16px; color: var(--text); }
 .blue { color: var(--blue); }

@@ -91,17 +91,17 @@
                     article.innerHTML = `
                         <div class="card-img-wrap">
                             <img src="${img}" alt="${pkg.title}" class="card-img" loading="lazy">
-                            <div class="card-badge ${badgeClass}">${pkg.badge || 'ðŸ†• Novo'}</div>
+                            <div class="card-badge ${badgeClass}">${pkg.badge || 'Novo'}</div>
                         </div>
                         <div class="card-body">
                             <div class="card-dest">${pkg.location || ''}</div>
                             <h3 class="card-title">${pkg.title}</h3>
                             <div class="card-dates">${pkg.duration || ''}</div>
                             <div class="card-price-block">
-                                <div class="card-pix">Pix: <strong>R$ ${pkg.price || 'â€”'}</strong></div>
+                                <div class="card-pix">Pix: <strong>R$ ${pkg.price || '-'}</strong></div>
                                 <div class="card-parcel">${pkg.parcelas || ''}</div>
                             </div>
-                            <a href="pacote.html?id=${pkgId}" class="btn btn-card">Ver detalhes completos â†’</a>
+                            <a href="pacote.html?id=${pkgId}" class="btn btn-card">Ver detalhes completos</a>
                         </div>`;
                     grid.appendChild(article);
                 });
@@ -256,19 +256,19 @@
             const lastPub = localStorage.getItem('lc_last_pub') || '';
             bar.innerHTML = `
             <div class="go-brand"><span class="go-logo-text">LC Viagens v1</span><span class="go-dot"></span></div>
-            <span class="go-hint">ðŸ‘† Clique em qualquer elemento para editar</span>
+            <span class="go-hint">Clique em qualquer elemento para editar</span>
             <div class="go-spacer"></div>
             ${lastPub ? `<span class="go-last-pub">Pub: ${lastPub}</span><div class="go-sep"></div>` : ''}
-            <button class="go-btn" id="go-pages">ðŸ“„ <span class="go-btn-lbl">PÃ¡ginas</span></button>
+            <button class="go-btn" id="go-pages"><span class="go-btn-lbl">Paginas</span></button>
             <div class="go-sep"></div>
-            <button class="go-btn" id="go-add-pkg">âž• <span class="go-btn-lbl">Pacote</span></button>
+            <button class="go-btn" id="go-add-pkg"><span class="go-btn-lbl">Pacote</span></button>
             <div class="go-sep"></div>
-            <button class="go-btn orange" id="go-colors">ðŸŽ¨ <span class="go-btn-lbl">Cores</span></button>
+            <button class="go-btn orange" id="go-colors"><span class="go-btn-lbl">Cores</span></button>
             <div class="go-sep"></div>
-            <button class="go-btn green" id="go-pub">ðŸš€ <span class="go-btn-lbl">Publicar</span></button>
+            <button class="go-btn green" id="go-pub"><span class="go-btn-lbl">Publicar</span></button>
             <div class="go-sep"></div>
-            <button class="go-btn" id="go-revert" title="Descartar rascunho">â†© <span class="go-btn-lbl">Reverter</span></button>
-            <button class="go-btn red" id="go-exit">âœ• <span class="go-btn-lbl">Sair</span></button>`;
+            <button class="go-btn" id="go-revert" title="Descartar rascunho"><span class="go-btn-lbl">Reverter</span></button>
+            <button class="go-btn red" id="go-exit"><span class="go-btn-lbl">Sair</span></button>`;
             document.body.prepend(bar);
             document.getElementById('go-pages').onclick   = () => this.pPages();
             document.getElementById('go-add-pkg').onclick = () => this.pAddPacote();
@@ -315,34 +315,34 @@
             if (!pb) return;
             const nav = document.createElement('div');
             nav.style.cssText = 'margin-bottom:12px;padding:10px 14px;background:#f0f4fa;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:8px;';
-            nav.innerHTML = `<span style="font-size:12px;color:#374151;">Quer ir para a pÃ¡gina?</span>
-                <a href="${url}" style="font-size:12px;font-weight:700;color:#E05220;white-space:nowrap;">Abrir pacote â†’</a>`;
+            nav.innerHTML = `<span style="font-size:12px;color:#374151;">Quer ir para a pagina?</span>
+                <a href="${url}" style="font-size:12px;font-weight:700;color:#E05220;white-space:nowrap;">Abrir pacote</a>`;
             pb.prepend(nav);
         },
 
         /* â”€â”€ PÃGINAS DO SITE â”€â”€ */
         pPages() {
             const pages = [
-                { label: 'ðŸ  Home',          url: 'index.html' },
-                { label: 'ðŸ§­ Quem Somos',    url: 'sobre.html' },
-                { label: 'â­ Clientes',       url: 'clientes.html' },
-                { label: 'ðŸ– BalneÃ¡rio',      url: 'pacote.html?id=balneario' },
-                { label: 'âš½ Copa do Mundo',  url: 'pacote.html?id=copa-canada' },
-                { label: 'ðŸ‡²ðŸ‡½ MÃ©xico',        url: 'pacote.html?id=copa-mexico' },
-                { label: 'ðŸ‡ºðŸ‡¸ EUA',           url: 'pacote.html?id=copa-eua' },
-                { label: 'ðŸŒŽ AmÃ©rica do Sul', url: 'pacote.html?id=copa-amsul' },
+                { label: 'Home',           url: 'index.html' },
+                { label: 'Quem Somos',     url: 'sobre.html' },
+                { label: 'Clientes',       url: 'clientes.html' },
+                { label: 'Balneario',      url: 'pacote.html?id=balneario' },
+                { label: 'Copa do Mundo',  url: 'pacote.html?id=copa-canada' },
+                { label: 'Mexico',         url: 'pacote.html?id=copa-mexico' },
+                { label: 'EUA',            url: 'pacote.html?id=copa-eua' },
+                { label: 'America do Sul', url: 'pacote.html?id=copa-amsul' },
             ];
-            const p = this.panel_('ðŸ“„ NavegaÃ§Ã£o â€” PÃ¡ginas do Site');
+            const p = this.panel_('Navegacao - Paginas do Site');
             const links = pages.map(pg => {
                 const isActive = location.pathname.endsWith(pg.url.split('?')[0]) &&
                                  location.search === (pg.url.includes('?') ? '?' + pg.url.split('?')[1] : '');
                 return `<a href="${pg.url}" style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:${isActive?'#FFF7ED':'#F9FAFB'};border:1px solid ${isActive?'#FED7AA':'#E5E7EB'};border-radius:8px;margin-bottom:8px;font-size:13px;font-weight:600;color:${isActive?'#C2410C':'#1F2937'};text-decoration:none;">
                     <span>${pg.label}</span>
-                    <span style="font-size:11px;color:#9CA3AF;">${isActive ? 'â† atual' : 'abrir â†’'}</span>
+                    <span style="font-size:11px;color:#9CA3AF;">${isActive ? 'atual' : 'abrir'}</span>
                 </a>`;
             }).join('');
             p.innerHTML += `<div class="go-pb">
-                <div style="font-size:11px;color:#6B7280;margin-bottom:12px;">O modo editor continua ativo ao navegar entre pÃ¡ginas.</div>
+                <div style="font-size:11px;color:#6B7280;margin-bottom:12px;">O modo editor continua ativo ao navegar entre paginas.</div>
                 ${links}
             </div>`;
         },
@@ -353,14 +353,14 @@
             const origStyle = el.getAttribute('style') || '';
             const cs = getComputedStyle(el);
             let colorChanged = false, sizeChanged = false;
-            const p = this.panel_('âœï¸ Editar Texto â€” ' + (el.dataset.elabel || ''));
+            const p = this.panel_('Editar texto - ' + (el.dataset.elabel || ''));
             /* strip inline color/background from content so editor shows dark text on white */
             const _tmp = document.createElement('div');
             _tmp.innerHTML = el.innerHTML;
             _tmp.querySelectorAll('*').forEach(n => { n.style.color = ''; n.style.background = ''; n.style.backgroundColor = ''; });
             const _clean = _tmp.innerHTML;
             p.innerHTML += `<div class="go-pb">
-                <div class="go-f"><label>ConteÃºdo</label>
+                <div class="go-f"><label>Conteudo</label>
                     <div class="go-rich" contenteditable="true" id="gor" style="background:#e2e2e2;color:#1a1a1a;border:2px solid #718096;min-height:70px;padding:9px 11px;border-radius:8px;font-size:13px;line-height:1.5;">${_clean}</div>
                     <div class="go-fmts">
                         <button onmousedown="event.preventDefault();document.execCommand('bold')"><b>N</b></button>
@@ -373,7 +373,7 @@
                     <div class="go-f"><label>Tamanho (px)</label><input type="text" id="gofs" value="${parseInt(cs.fontSize)||16}"></div>
                 </div>
                 <div class="go-acts">
-                    <button class="go-ok" id="goa">âœ“ Aplicar</button>
+                    <button class="go-ok" id="goa">Aplicar</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -391,7 +391,7 @@
                 if (Object.keys(styleOverride).length) entry.style = styleOverride;
                 this.store(el.dataset.eid, entry);
                 this.closePanel();
-                this.toast('âœ“ Texto salvo no rascunho', 'ok');
+                this.toast('Texto salvo no rascunho', 'ok');
             };
             p.querySelector('#goc').onclick = () => {
                 el.innerHTML = origHTML;
@@ -404,15 +404,15 @@
         pImage(el) {
             const origSrc  = el.src;
             const origAttr = el.getAttribute('src') || el.src;
-            const p = this.panel_('ðŸ–¼ï¸ Trocar Imagem â€” ' + (el.dataset.elabel || ''));
-            const localWarn = isLocal ? `<div class="go-local-warn">âš ï¸ <strong>Modo local:</strong> Upload de arquivos sÃ³ funciona no site publicado (Vercel). Use uma URL de imagem abaixo.</div>` : '';
+            const p = this.panel_('Trocar imagem - ' + (el.dataset.elabel || ''));
+            const localWarn = isLocal ? `<div class="go-local-warn"><strong>Modo local:</strong> upload de arquivos so funciona no site publicado (Vercel). Use uma URL de imagem abaixo.</div>` : '';
             p.innerHTML += `<div class="go-pb">
                 ${localWarn}
                 <img class="go-prev" id="goprev" src="${origSrc}" style="background:#F3F4F6;">
                 <div class="go-f">
                     <label>Enviar do computador</label>
-                    <button id="gobtn" style="width:100%;padding:10px;border:2px dashed #E5E7EB;border-radius:8px;background:#F9FAFB;cursor:pointer;font-size:13px;color:#374151;transition:border .15s;"${isLocal?' disabled title="DisponÃ­vel apenas no site publicado"':''}>
-                        ðŸ“‚ Escolher arquivo (JPG, PNG, WEBP)
+                    <button id="gobtn" style="width:100%;padding:10px;border:2px dashed #E5E7EB;border-radius:8px;background:#F9FAFB;cursor:pointer;font-size:13px;color:#374151;transition:border .15s;"${isLocal?' disabled title="Disponivel apenas no site publicado"':''}>
+                        Escolher arquivo (JPG, PNG, WEBP)
                     </button>
                     <input type="file" id="gofile" accept="image/jpeg,image/png,image/webp,image/gif" style="display:none">
                     <div id="goupstatus" class="go-hint-txt" style="margin-top:6px;"></div>
@@ -423,7 +423,7 @@
                     <p class="go-hint-txt">Cole qualquer URL de imagem da internet (JPG, PNG, WEBP)</p>
                 </div>
                 <div class="go-acts">
-                    <button class="go-ok" id="goa">âœ“ Aplicar</button>
+                    <button class="go-ok" id="goa">Aplicar</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -443,7 +443,7 @@
                     const f = file.files[0];
                     if (!f) return;
                     if (f.size > 3 * 1024 * 1024) {
-                        status.textContent = 'âŒ Arquivo muito grande (mÃ¡x 3MB). Comprima antes.';
+                        status.textContent = 'Arquivo muito grande (max. 3MB). Comprima antes.';
                         status.style.color = '#DC2626';
                         return;
                     }
@@ -452,9 +452,9 @@
                         const dataUrl = ev.target.result;
                         el.src = dataUrl;
                         pv.src = dataUrl;
-                        btn.textContent = 'â³ Enviandoâ€¦';
+                        btn.textContent = 'Enviando...';
                         btn.disabled = true;
-                        status.textContent = 'Enviando para o servidorâ€¦';
+                        status.textContent = 'Enviando para o servidor...';
                         status.style.color = '#6B7280';
                         try {
                             const b64 = dataUrl.split(',')[1];
@@ -471,8 +471,8 @@
                                 });
                                 pv.src = data.url;
                                 ui.value = data.url;
-                                btn.textContent = 'âœ… Imagem enviada!';
-                                status.textContent = 'Clique em âœ“ Aplicar para salvar.';
+                                btn.textContent = 'Imagem enviada!';
+                                status.textContent = 'Clique em Aplicar para salvar.';
                                 status.style.color = '#16A34A';
                             } else {
                                 throw new Error(data.error || 'Erro no upload');
@@ -480,9 +480,9 @@
                         } catch (err) {
                             el.src = origSrc;
                             pv.src = origSrc;
-                            btn.textContent = 'ðŸ“‚ Escolher arquivo';
+                            btn.textContent = 'Escolher arquivo';
                             btn.disabled = false;
-                            status.textContent = 'âŒ ' + err.message;
+                            status.textContent = err.message;
                             status.style.color = '#DC2626';
                         }
                     };
@@ -506,7 +506,7 @@
                 });
                 this.store(el.dataset.eid, { src });
                 this.closePanel();
-                this.toast('âœ“ Imagem salva no rascunho', 'ok');
+                this.toast('Imagem salva no rascunho', 'ok');
             };
             p.querySelector('#goc').onclick = () => {
                 el.src = origSrc;
@@ -521,7 +521,7 @@
             const origHref   = el.getAttribute('href') || '';
             const origTarget = el.getAttribute('target') || '_self';
             const cs = getComputedStyle(el);
-            const p = this.panel_('ðŸ”— Editar BotÃ£o/Link â€” ' + (el.dataset.elabel || ''));
+            const p = this.panel_('Editar botao/link - ' + (el.dataset.elabel || ''));
             p.innerHTML += `<div class="go-pb">
                 <div class="go-f"><label>Texto</label><input type="text" id="gobt" value="${el.textContent.trim()}"></div>
                 <div class="go-f"><label>Link (URL)</label><input type="url" id="gobh" value="${origHref}" placeholder="https://wa.me/..."></div>
@@ -536,7 +536,7 @@
                     <div class="go-f"><label>Cor do texto</label><input type="color" id="gobfg" value="${this.hex(cs.color)}"></div>
                 </div>
                 <div class="go-acts">
-                    <button class="go-ok" id="goa">âœ“ Aplicar</button>
+                    <button class="go-ok" id="goa">Aplicar</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -559,7 +559,7 @@
                 if (Object.keys(styleOverride).length) entry.style = styleOverride;
                 this.store(el.dataset.eid, entry);
                 this.closePanel();
-                this.toast('âœ“ BotÃ£o salvo no rascunho', 'ok');
+                this.toast('Botao salvo no rascunho', 'ok');
             };
             p.querySelector('#goc').onclick = () => {
                 el.innerHTML = origHTML;
@@ -579,19 +579,19 @@
             const origEmoji = spaceIdx > -1 ? full.slice(0, spaceIdx) : '';
             const origText  = spaceIdx > -1 ? full.slice(spaceIdx + 1) : full;
 
-            const p = this.panel_('âœï¸ Editar Item â€” ' + (el.dataset.elabel || ''));
+            const p = this.panel_('Editar item - ' + (el.dataset.elabel || ''));
             p.innerHTML += `<div class="go-pb">
                 <div class="go-f">
-                    <label>Emoji / Ãcone</label>
-                    <input type="text" id="go-emoji" value="${origEmoji}" placeholder="âœˆ ðŸ¨ ðŸŽŸ ðŸš ðŸ”’" style="font-size:20px;text-align:center;">
-                    <p class="go-hint-txt">Cole ou digite qualquer emoji. Ex: âœˆ ðŸ¨ ðŸŽ¡ ðŸš ðŸ”’ ðŸŽŸ ðŸ– ðŸ” ðŸŒ¿</p>
+                    <label>Icone</label>
+                    <input type="text" id="go-emoji" value="${origEmoji}" placeholder="Ex: check, hotel, voo" style="font-size:20px;text-align:center;">
+                    <p class="go-hint-txt">Digite um icone curto ou deixe em branco.</p>
                 </div>
                 <div class="go-f">
                     <label>Texto do item</label>
                     <input type="text" id="go-itext" value="${origText.replace(/"/g,'&quot;')}">
                 </div>
                 <div class="go-acts">
-                    <button class="go-ok" id="goa">âœ“ Aplicar</button>
+                    <button class="go-ok" id="goa">Aplicar</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -613,7 +613,7 @@
                 el.textContent = newText;
                 this.store(eid, { text: newText });
                 this.closePanel();
-                this.toast('âœ“ Item salvo no rascunho', 'ok');
+                this.toast('Item salvo no rascunho', 'ok');
             };
             p.querySelector('#goc').onclick = () => {
                 el.innerHTML = origHTML;
@@ -629,7 +629,7 @@
                 const btn = document.createElement('button');
                 btn.className = 'go-remove-btn';
                 btn.title = 'Remover este pacote';
-                btn.innerHTML = 'âœ•';
+                btn.innerHTML = 'x';
                 btn.style.cssText = 'position:absolute;top:10px;right:10px;z-index:99990;width:28px;height:28px;border-radius:50%;background:#DC2626;color:#fff;border:none;cursor:pointer;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.4);transition:all .15s;';
                 btn.onmouseenter = () => btn.style.transform = 'scale(1.15)';
                 btn.onmouseleave = () => btn.style.transform = '';
@@ -647,7 +647,7 @@
                 const btn = document.createElement('button');
                 btn.className = 'go-remove-btn';
                 btn.title = 'Remover este pacote';
-                btn.innerHTML = 'âœ•';
+                btn.innerHTML = 'x';
                 btn.style.cssText = 'position:absolute;top:10px;right:10px;z-index:99990;width:28px;height:28px;border-radius:50%;background:#DC2626;color:#fff;border:none;cursor:pointer;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.4);transition:all .15s;';
                 btn.onmouseenter = () => btn.style.transform = 'scale(1.15)';
                 btn.onmouseleave = () => btn.style.transform = '';
@@ -663,14 +663,14 @@
 
         confirmRemoveCard(article) {
             const title = article.querySelector('[data-elabel]')?.dataset.elabel || article.id || 'este pacote';
-            const p = this.panel_('ðŸ—‘ï¸ Remover Pacote');
+            const p = this.panel_('Remover pacote');
             p.innerHTML += `<div class="go-pb">
                 <div class="go-pub-err" style="margin-bottom:14px;">
-                    âš ï¸ Tem certeza que deseja <strong>remover</strong> o card <em>"${title}"</em> da pÃ¡gina inicial?<br><br>
-                    <span style="font-size:11px;opacity:.8;">Esta aÃ§Ã£o pode ser desfeita clicando em "Reverter" antes de publicar.</span>
+                    Tem certeza que deseja <strong>remover</strong> o card <em>"${title}"</em> da pagina inicial?<br><br>
+                    <span style="font-size:11px;opacity:.8;">Esta acao pode ser desfeita clicando em "Reverter" antes de publicar.</span>
                 </div>
                 <div class="go-acts">
-                    <button class="go-ok" id="goa" style="background:#DC2626;">ðŸ—‘ï¸ Sim, remover</button>
+                    <button class="go-ok" id="goa" style="background:#DC2626;">Sim, remover</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -697,61 +697,61 @@
                 }
 
                 this.closePanel();
-                this.toast('âœ“ Card removido do rascunho', 'ok');
+                this.toast('Card removido do rascunho', 'ok');
             };
         },
 
         /* â”€â”€ ADICIONAR NOVO PACOTE â”€â”€ */
         pAddPacote() {
-            const p = this.panel_('âž• Adicionar Novo Pacote');
+            const p = this.panel_('Adicionar novo pacote');
             p.innerHTML += `<div class="go-pb">
-                <div class="go-info">Preencha os dados bÃ¡sicos. O pacote serÃ¡ adicionado Ã  lista e ficarÃ¡ disponÃ­vel via <code>pacote.html?id=SEU_ID</code>.</div>
-                <div class="go-f"><label>ID do pacote (sem espaÃ§os)</label>
+                <div class="go-info">Preencha os dados basicos. O pacote sera adicionado a lista e ficara disponivel via <code>pacote.html?id=SEU_ID</code>.</div>
+                <div class="go-f"><label>ID do pacote (sem espacos)</label>
                     <input type="text" id="gp-id" placeholder="ex: cancun, dubai, paris2026">
-                    <p class="go-hint-txt">Use letras minÃºsculas, nÃºmeros e _ (underline). Ex: cancun, copa_dubai</p>
+                    <p class="go-hint-txt">Use letras minusculas, numeros e _ (underline). Ex: cancun, copa_dubai</p>
                 </div>
-                <div class="go-f"><label>TÃ­tulo</label><input type="text" id="gp-title" placeholder="Ex: CancÃºn â€“ Caribe Mexicano"></div>
-                <div class="go-f"><label>SubtÃ­tulo</label><input type="text" id="gp-sub" placeholder="Ex: Praias paradisÃ­acas e resorts all inclusive"></div>
-                <div class="go-f"><label>LocalizaÃ§Ã£o</label><input type="text" id="gp-loc" placeholder="Ex: CancÃºn, MÃ©xico"></div>
-                <div class="go-f"><label>DuraÃ§Ã£o</label><input type="text" id="gp-dur" placeholder="Ex: 7 dias / 6 noites"></div>
-                <div class="go-f"><label>PreÃ§o PIX (R$)</label><input type="text" id="gp-price" placeholder="Ex: 8.900,00"></div>
-                <div class="go-f"><label>PreÃ§o CartÃ£o (R$)</label><input type="text" id="gp-cartao" placeholder="Ex: 9.350,00"></div>
+                <div class="go-f"><label>Titulo</label><input type="text" id="gp-title" placeholder="Ex: Cancun - Caribe Mexicano"></div>
+                <div class="go-f"><label>Subtitulo</label><input type="text" id="gp-sub" placeholder="Ex: Praias paradisiacas e resorts all inclusive"></div>
+                <div class="go-f"><label>Localizacao</label><input type="text" id="gp-loc" placeholder="Ex: Cancun, Mexico"></div>
+                <div class="go-f"><label>Duracao</label><input type="text" id="gp-dur" placeholder="Ex: 7 dias / 6 noites"></div>
+                <div class="go-f"><label>Preco PIX (R$)</label><input type="text" id="gp-price" placeholder="Ex: 8.900,00"></div>
+                <div class="go-f"><label>Preco Cartao (R$)</label><input type="text" id="gp-cartao" placeholder="Ex: 9.350,00"></div>
                 <div class="go-f"><label>Parcelas</label><input type="text" id="gp-parc" placeholder="Ex: 10x de R$ 935,00 sem juros"></div>
-                <div class="go-f"><label>Flag / PaÃ­s</label><input type="text" id="gp-flag" placeholder="Ex: MÃ©xico ðŸŒ®"></div>
-                <div class="go-f"><label>Badge</label><input type="text" id="gp-badge" placeholder="Ex: ðŸ”¥ Oferta  ou  â­ Popular"></div>
+                <div class="go-f"><label>Pais</label><input type="text" id="gp-flag" placeholder="Ex: Mexico"></div>
+                <div class="go-f"><label>Badge</label><input type="text" id="gp-badge" placeholder="Ex: Oferta ou Popular"></div>
                 <div class="go-f"><label>Categoria</label>
                     <select id="gp-cat" style="width:100%;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-family:inherit;font-size:.9rem;" >
-                        <option value="nacional">ðŸ‡§ðŸ‡· Nacional (aparece na aba Nacional)</option>
-                        <option value="internacional">ðŸŒ Internacional (aparece na aba Internacional)</option>
-                        <option value="copa">ðŸ† Copa 2026 (seÃ§Ã£o Copa)</option>
+                        <option value="nacional">Nacional (aparece na aba Nacional)</option>
+                        <option value="internacional">Internacional (aparece na aba Internacional)</option>
+                        <option value="copa">Copa 2026 (secao Copa)</option>
                     </select>
                 </div>
-                <div class="go-f"><label>Imagem 1 â€” Principal (URL)</label>
+                <div class="go-f"><label>Imagem 1 - Principal (URL)</label>
                     <input type="url" id="gp-img" placeholder="https://site.com/foto1.jpg">
                 </div>
-                <div class="go-f"><label>Imagem 2 (URL) â€” opcional</label>
+                <div class="go-f"><label>Imagem 2 (URL) - opcional</label>
                     <input type="url" id="gp-img2" placeholder="https://site.com/foto2.jpg">
                 </div>
-                <div class="go-f"><label>Imagem 3 (URL) â€” opcional</label>
+                <div class="go-f"><label>Imagem 3 (URL) - opcional</label>
                     <input type="url" id="gp-img3" placeholder="https://site.com/foto3.jpg">
-                    <p class="go-hint-txt">As 3 imagens aparecem no carrossel da pÃ¡gina do pacote.</p>
+                    <p class="go-hint-txt">As 3 imagens aparecem no carrossel da pagina do pacote.</p>
                 </div>
-                <div class="go-f"><label>DescriÃ§Ã£o do destino</label>
-                    <textarea id="gp-desc" rows="4" placeholder="Descreva o destino e os destaques do pacoteâ€¦"></textarea>
+                <div class="go-f"><label>Descricao do destino</label>
+                    <textarea id="gp-desc" rows="4" placeholder="Descreva o destino e os destaques do pacote..."></textarea>
                 </div>
-                <div class="go-f"><label>O que estÃ¡ incluso</label>
-                    <textarea id="gp-incluso" rows="5" placeholder="Um item por linha. Ex:&#10;âœˆ Passagem aÃ©rea ida e volta&#10;ðŸ¨ Hotel 4â˜… com cafÃ© da manhÃ£&#10;ðŸš Transfer In/Out"></textarea>
-                    <p class="go-hint-txt">Um item por linha. Comece com o emoji desejado.</p>
+                <div class="go-f"><label>O que esta incluso</label>
+                    <textarea id="gp-incluso" rows="5" placeholder="Um item por linha. Ex:&#10;Passagem aerea ida e volta&#10;Hotel com cafe da manha&#10;Transfer In/Out"></textarea>
+                    <p class="go-hint-txt">Um item por linha.</p>
                 </div>
-                <div class="go-f"><label>NÃ£o incluso</label>
-                    <textarea id="gp-nao" rows="3" placeholder="Um item por linha. Ex:&#10;AlmoÃ§os e jantares&#10;Gorjetas"></textarea>
+                <div class="go-f"><label>Nao incluso</label>
+                    <textarea id="gp-nao" rows="3" placeholder="Um item por linha. Ex:&#10;Almocos e jantares&#10;Gorjetas"></textarea>
                 </div>
                 <div class="go-f"><label>Roteiro (um dia por linha)</label>
-                    <textarea id="gp-rot" rows="6" placeholder="Formato: TÃ­tulo do dia | DescriÃ§Ã£o&#10;Ex:&#10;Chegada a CancÃºn | Transfer ao resort. Check-in e tarde livre.&#10;Praia + Piscina | Dia de relaxamento no resort all inclusive."></textarea>
-                    <p class="go-hint-txt">Separe tÃ­tulo e descriÃ§Ã£o com <strong>|</strong>. Um dia por linha.</p>
+                    <textarea id="gp-rot" rows="6" placeholder="Formato: Titulo do dia | Descricao&#10;Ex:&#10;Chegada a Cancun | Transfer ao resort. Check-in e tarde livre.&#10;Praia + Piscina | Dia de relaxamento no resort all inclusive."></textarea>
+                    <p class="go-hint-txt">Separe titulo e descricao com <strong>|</strong>. Um dia por linha.</p>
                 </div>
                 <div class="go-acts" style="margin-top:16px;">
-                    <button class="go-ok" id="goa">âœ“ Criar Pacote</button>
+                    <button class="go-ok" id="goa">Criar pacote</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -802,13 +802,13 @@
                 this.store('__new_packages', existing);
 
                 this.closePanel();
-                this.toast('âœ“ Pacote "' + title + '" criado! Acesse: pacote.html?id=' + id, 'ok');
+                this.toast('Pacote "' + title + '" criado. Acesse: pacote.html?id=' + id, 'ok');
 
                 // Mostrar link de acesso
                 setTimeout(() => {
                     const info = document.createElement('div');
                     info.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1a2436;color:#e8edf5;padding:14px 22px;border-radius:12px;font-size:13px;z-index:999999;box-shadow:0 8px 24px rgba(0,0,0,.4);text-align:center;border:1px solid rgba(255,255,255,.1);';
-                    info.innerHTML = `ðŸ“¦ Pacote criado!<br><a href="pacote.html?id=${id}" style="color:#E05220;font-weight:700;" target="_blank">â†’ Abrir pacote.html?id=${id}</a><br><span style="font-size:11px;opacity:.6;margin-top:4px;display:block;">Publique para tornar permanente.</span>`;
+                    info.innerHTML = `Pacote criado.<br><a href="pacote.html?id=${id}" style="color:#E05220;font-weight:700;" target="_blank">Abrir pacote.html?id=${id}</a><br><span style="font-size:11px;opacity:.6;margin-top:4px;display:block;">Publique para tornar permanente.</span>`;
                     document.body.appendChild(info);
                     setTimeout(() => info.remove(), 7000);
                 }, 400);
@@ -819,20 +819,20 @@
         pColors() {
             const root = document.documentElement;
             const g = v => getComputedStyle(root).getPropertyValue(v).trim() || '#000000';
-            const p = this.panel_('ðŸŽ¨ Cores Globais do Site');
+            const p = this.panel_('Cores globais do site');
             p.innerHTML += `<div class="go-pb">
-                <div class="go-info">Altera as cores principais em todo o site de uma sÃ³ vez.</div>
-                <div class="go-cr"><label>ðŸŸ  Laranja principal</label><input type="color" id="gog1" value="${this.hex(g('--orange'))||'#E05220'}"></div>
-                <div class="go-cr"><label>ðŸŸ  Laranja escuro</label><input type="color" id="gog2" value="${this.hex(g('--orange-dark'))||'#c04418'}"></div>
-                <div class="go-cr"><label>ðŸ”µ Azul destaque</label><input type="color" id="gog3" value="${this.hex(g('--blue'))||'#22A8C9'}"></div>
-                <div class="go-cr"><label>â¬› Fundo dark</label><input type="color" id="gog4" value="${this.hex(g('--dark'))||'#0f1623'}"></div>
+                <div class="go-info">Altera as cores principais em todo o site de uma so vez.</div>
+                <div class="go-cr"><label>Laranja principal</label><input type="color" id="gog1" value="${this.hex(g('--orange'))||'#E05220'}"></div>
+                <div class="go-cr"><label>Laranja escuro</label><input type="color" id="gog2" value="${this.hex(g('--orange-dark'))||'#c04418'}"></div>
+                <div class="go-cr"><label>Azul destaque</label><input type="color" id="gog3" value="${this.hex(g('--blue'))||'#22A8C9'}"></div>
+                <div class="go-cr"><label>Fundo escuro</label><input type="color" id="gog4" value="${this.hex(g('--dark'))||'#0f1623'}"></div>
                 <hr class="go-hr">
-                <div class="go-f"><label>ðŸ“± NÃºmero do WhatsApp</label>
+                <div class="go-f"><label>Numero do WhatsApp</label>
                     <input type="text" id="gogwa" value="${this.cms.whatsapp||''}" placeholder="5521966501302">
-                    <p class="go-hint-txt">Somente nÃºmeros com DDD e cÃ³digo do paÃ­s. Atualiza todos os botÃµes do site.</p>
+                    <p class="go-hint-txt">Somente numeros com DDD e codigo do pais. Atualiza todos os botoes do site.</p>
                 </div>
                 <div class="go-acts">
-                    <button class="go-ok" id="goa">âœ“ Aplicar cores</button>
+                    <button class="go-ok" id="goa">Aplicar cores</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -857,7 +857,7 @@
                 localStorage.setItem(CMS_KEY, JSON.stringify(this.cms));
                 this.markDirty();
                 this.closePanel();
-                this.toast('âœ“ Cores salvas no rascunho', 'ok');
+                this.toast('Cores salvas no rascunho', 'ok');
             };
             p.querySelector('#goc').onclick = () => {
                 vars.forEach(v => root.style.removeProperty(v));
@@ -870,24 +870,24 @@
         revert() {
             let hasDraft = false;
             try { hasDraft = Object.keys(JSON.parse(localStorage.getItem(CMS_KEY) || '{}')).length > 0; } catch (_) {}
-            if (!hasDraft) { this.toast('NÃ£o hÃ¡ rascunho para descartar', ''); return; }
-            if (!confirm('Descartar todas as alteraÃ§Ãµes nÃ£o publicadas? O site voltarÃ¡ ao conteÃºdo publicado.')) return;
+            if (!hasDraft) { this.toast('Nao ha rascunho para descartar', ''); return; }
+            if (!confirm('Descartar todas as alteracoes nao publicadas? O site voltara ao conteudo publicado.')) return;
             localStorage.removeItem(CMS_KEY);
             document.querySelectorAll('.go-dirty-dot').forEach(d => d.remove());
-            this.toast('Rascunho descartado. Recarregandoâ€¦', '');
+            this.toast('Rascunho descartado. Recarregando...', '');
             setTimeout(() => location.reload(), 900);
         },
 
         /* â”€â”€ PUBLICAR â”€â”€ */
         async publish() {
             if (isLocal) {
-                this.toast('âš ï¸ Publicar sÃ³ funciona no site no Vercel', 'err');
-                this.panel_('âš ï¸ PublicaÃ§Ã£o IndisponÃ­vel').innerHTML += `<div class="go-pb">
+                this.toast('Publicar so funciona no site no Vercel', 'err');
+                this.panel_('Publicacao indisponivel').innerHTML += `<div class="go-pb">
                     <div class="go-local-warn" style="margin-bottom:0;">
-                        <strong>VocÃª estÃ¡ no modo local.</strong><br>
+                        <strong>Voce esta no modo local.</strong><br>
                         Para publicar, acesse o editor pelo site publicado:<br><br>
-                        <a href="https://321go-psi.vercel.app/admin/login.html" target="_blank" style="color:#C2410C;font-weight:700;">
-                            â†’ Abrir site no Vercel
+                        <a href="https://lc-viagens.vercel.app/admin/login.html" target="_blank" style="color:#C2410C;font-weight:700;">
+                            Abrir site no Vercel
                         </a>
                     </div>
                     <button class="go-ko" style="width:100%;margin-top:14px" onclick="this.closest('.go-panel').remove()">Fechar</button>
@@ -900,7 +900,7 @@
             const hasWA   = !!this.cms.whatsapp;
             const total   = elems.length + (hasCols ? 1 : 0) + (hasWA ? 1 : 0);
 
-            if (total === 0) { this.toast('Nenhuma alteraÃ§Ã£o para publicar', ''); return; }
+            if (total === 0) { this.toast('Nenhuma alteracao para publicar', ''); return; }
 
             let items = '';
             if (elems.length) items += `<li>${elems.length} elemento(s) editados</li>`;
@@ -908,16 +908,16 @@
             if (hasWA)   items += `<li>WhatsApp: ${this.cms.whatsapp}</li>`;
 
             const hasSavedSecret = !!localStorage.getItem(SECRET_KEY);
-            const p = this.panel_('ðŸš€ Publicar AlteraÃ§Ãµes');
+            const p = this.panel_('Publicar alteracoes');
             p.innerHTML += `<div class="go-pb">
                 <div class="go-info" style="background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF;border-radius:10px;padding:14px;margin-bottom:14px;line-height:1.8;">
-                    <strong>O que serÃ¡ publicado:</strong><ul style="margin:8px 0 0 16px;">${items}</ul>
+                    <strong>O que sera publicado:</strong><ul style="margin:8px 0 0 16px;">${items}</ul>
                 </div>
-                ${!hasSavedSecret ? `<div class="go-f"><label>ðŸ”‘ Senha de acesso</label>
+                ${!hasSavedSecret ? `<div class="go-f"><label>Senha de acesso</label>
                     <input type="password" id="gopwd" placeholder="Digite sua senha admin"></div>` : ''}
-                <p class="go-hint-txt">Estas mudanÃ§as ficarÃ£o visÃ­veis para todos os visitantes em ~30 segundos.</p>
+                <p class="go-hint-txt">Estas mudancas ficarao visiveis para todos os visitantes em aproximadamente 30 segundos.</p>
                 <div class="go-acts" style="margin-top:14px;">
-                    <button class="go-ok" id="goa">âœ“ Confirmar e publicar</button>
+                    <button class="go-ok" id="goa">Confirmar e publicar</button>
                     <button class="go-ko" id="goc">Cancelar</button>
                 </div>
             </div>`;
@@ -931,7 +931,7 @@
                     secret = pwdEl.value;
                     localStorage.setItem(SECRET_KEY, secret);
                 }
-                p.querySelector('.go-pb').innerHTML = `<div class="go-loading"><span class="go-spin">â³</span>Publicando alteraÃ§Ãµesâ€¦</div>`;
+                p.querySelector('.go-pb').innerHTML = `<div class="go-loading"><span class="go-spin"></span>Publicando alteracoes...</div>`;
                 try {
                     const res = await fetch('/api/publish', {
                         method: 'POST',
@@ -948,18 +948,18 @@
                         if (lp) lp.textContent = 'Pub: ' + now;
                         applyContent(this.cms);
                         p.querySelector('.go-pb').innerHTML = `
-                            <div class="go-pub-box">âœ… <strong>Publicado com sucesso!</strong><br>
-                            Visitantes verÃ£o as mudanÃ§as em alguns segundos.</div>
-                            <button class="go-ok" style="width:100%;margin-top:12px" onclick="this.closest('.go-panel').remove()">âœ“ OK</button>`;
-                        this.toast('âœ… Publicado com sucesso!', 'ok');
+                            <div class="go-pub-box"><strong>Publicado com sucesso!</strong><br>
+                            Visitantes verao as mudancas em alguns segundos.</div>
+                            <button class="go-ok" style="width:100%;margin-top:12px" onclick="this.closest('.go-panel').remove()">OK</button>`;
+                        this.toast('Publicado com sucesso!', 'ok');
                     } else {
                         throw new Error(data.error || 'Erro desconhecido');
                     }
                 } catch (err) {
                     p.querySelector('.go-pb').innerHTML = `
-                        <div class="go-pub-err">âŒ <strong>Erro:</strong> ${err.message}</div>
+                        <div class="go-pub-err"><strong>Erro:</strong> ${err.message}</div>
                         <button class="go-ko" style="width:100%;margin-top:12px" onclick="this.closest('.go-panel').remove()">Fechar</button>`;
-                    this.toast('âŒ Erro ao publicar', 'err');
+                    this.toast('Erro ao publicar', 'err');
                 }
             };
         },
@@ -968,7 +968,7 @@
         exit() {
             let hasDraft = false;
             try { hasDraft = Object.keys(JSON.parse(localStorage.getItem(CMS_KEY) || '{}')).length > 0; } catch (_) {}
-            if (hasDraft && !confirm('Sair do editor? VocÃª tem alteraÃ§Ãµes nÃ£o publicadas (rascunho salvo).')) return;
+            if (hasDraft && !confirm('Sair do editor? Voce tem alteracoes nao publicadas (rascunho salvo).')) return;
             sessionStorage.removeItem('editor_active');
             localStorage.removeItem(AUTH_KEY);
             localStorage.removeItem(SECRET_KEY);
@@ -983,7 +983,7 @@
             const p = document.createElement('div');
             p.className = 'go-panel';
             p.style.cssText = 'color:#e8edf5;background:#1a2436;';
-            p.innerHTML = `<div class="go-ph"><h3>${title}</h3><button class="go-px" title="Fechar">âœ•</button></div>`;
+            p.innerHTML = `<div class="go-ph"><h3>${title}</h3><button class="go-px" title="Fechar">x</button></div>`;
             document.body.appendChild(p);
             p.querySelector('.go-px').onclick = () => this.closePanel();
             this.drag_(p);
