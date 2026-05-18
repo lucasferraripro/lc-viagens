@@ -1,5 +1,8 @@
 {
   "__removed_cards": [],
   "__new_packages": {},
-  "__db_overrides": {}
+  "__db_overrides": {},
+  "hero-title": {
+    "html": "\n        Sua próxima aventura<br>começa <span class=\"hero-accent\">aqui!</span>"
+  }
 }
