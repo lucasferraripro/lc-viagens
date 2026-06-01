@@ -6,21 +6,27 @@
 /* ── DADOS DA AGÊNCIA ── */
 const SITE = {
     nome:     'LC Viagens',
+    responsavel: 'Clebert Rocha',
+    empresa:  '61.444.098 CLEBERT FIRMINO ROCHA DA SILVA',
+    cnpj:     '61.444.098/0001-60',
+    cadastur: '61.444.098',
+    cadasturValidade: '09/07/2025 a 09/07/2027',
     whatsapp: '5582988017594',
     email:    'agencialcviagens@gmail.com',
     tel:      '(82) 98801-7594',
     insta:    'lc_viagenss'
 };
+window.SITE = SITE;
 
 /* ── THUMB MAP ── */
 const THUMB = {
     milao_bernina: 'imagens/lc_foto1.jpg',
-    balneario:     'imagens/balneario_camboriu.png',
-    maceio:        'imagens/maceio.png',
-    gramado:       'imagens/gramado.png',
-    bariloche:     'imagens/bariloche.png',
-    curitiba:      'imagens/curitiba.png',
-    porto:         'imagens/porto_seguro.png'
+    balneario:     'imagens/balneario_camboriu.jpg',
+    maceio:        'imagens/maceio.jpg',
+    gramado:       'imagens/gramado.jpg',
+    bariloche:     'imagens/bariloche.jpg',
+    curitiba:      'imagens/curitiba.jpg',
+    porto:         'imagens/porto_seguro.jpg'
 };
 
 /* ── BANCO DE PACOTES ── */
@@ -77,9 +83,9 @@ const DB = {
         flag:  'Brasil 🇧🇷',
         badge: '🔥 Oferta',
         images: [
-            'imagens/balneario_camboriu.png',
-            'imagens/bc_roda_gigante.png',
-            'imagens/bc_beto_carrero.png'
+            'imagens/balneario_camboriu.jpg',
+            'imagens/bc_roda_gigante.jpg',
+            'imagens/bc_beto_carrero.jpg'
         ],
         dates: '📅 Consulte datas disponíveis',
         desc: 'Localizada no litoral norte de Santa Catarina, Balneário Camboriú tem além de praias lindas, uma infraestrutura moderna com comércio forte e farta opção gastronômica. Conheça a Barra Sul, o Letreiro I AMO BC, a passarela histórica, o píer do Barco Pirata e o Parque Unipraias — único complexo turístico que une duas praias no mundo! O Parque Beto Carrero World é o maior centro de lazer e entretenimento da América Latina.',
@@ -112,9 +118,9 @@ const DB = {
         flag:  'Brasil 🌊',
         badge: '⭐ Popular',
         images: [
-            'imagens/maceio.png',
-            'imagens/maceio_maragogi.png',
-            'imagens/maceio_pajucara.png'
+            'imagens/maceio.jpg',
+            'imagens/maceio_maragogi.jpg',
+            'imagens/maceio_pajucara.jpg'
         ],
         dates: '📅 Consulte datas disponíveis',
         desc: 'Maceió é a capital de Alagoas — 40 km de praias com águas transparentes que variam entre o azul e o verde, formando piscinas naturais únicas. Entre a Lagoa Mundaú e o Oceano Atlântico, a cidade encanta com praias urbanas movimentadas e selvagens totalmente desertas.',
@@ -150,9 +156,9 @@ const DB = {
         flag:  'Brasil 🍷',
         badge: '⭐ Popular',
         images: [
-            'imagens/gramado.png',
-            'imagens/bariloche.png',
-            'imagens/curitiba_trem.png'
+            'imagens/gramado.jpg',
+            'imagens/bariloche.jpg',
+            'imagens/curitiba_trem.jpg'
         ],
         dates: '📅 Consulte datas disponíveis',
         desc: 'Gramado é a joia da Serra Gaúcha — uma cidade que encanta com sua arquitetura enxaimel, ruas floridas, chocolates artesanais, cafés coloniais e fondue. A famosa Noite Gaúcha leva os visitantes para um espetáculo cultural com danças, músicas e gastronomia típica.',
@@ -187,9 +193,9 @@ const DB = {
         flag:  'Argentina 🇦🇷',
         badge: '💎 Premium',
         images: [
-            'imagens/bariloche.png',
-            'imagens/curitiba_opera.png',
-            'imagens/gramado.png'
+            'imagens/bariloche.jpg',
+            'imagens/curitiba_opera.jpg',
+            'imagens/gramado.jpg'
         ],
         dates: '📅 Consulte datas disponíveis',
         desc: 'Bariloche é o destino dos sonhos na Patagônia Argentina — lagos cristalinos, montanhas nevadas, chocolates artesanais e a charmosa arquitetura alpina que lembra a Suíça. O Circuito Chico é considerado um dos passeios mais bonitos da América do Sul.',

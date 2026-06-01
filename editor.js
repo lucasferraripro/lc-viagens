@@ -1,5 +1,5 @@
 ﻿/**
- * 321 GO! â€” EDITOR VISUAL CMS v2
+ * LC Viagens - Editor Visual CMS v2
  *
  * SINCRONIZAÃ‡ÃƒO TOTAL: campos de preÃ§o/tÃ­tulo/parcelas editados em qualquer
  * pÃ¡gina sÃ£o salvos em __db_overrides[pkgId] e aplicados ao DB antes de
@@ -61,7 +61,10 @@
 
         // Mesclar pacotes novos publicados no DB (para visitantes sem rascunho)
         if (cms.__new_packages && typeof cms.__new_packages === 'object' && typeof DB !== 'undefined') {
-            Object.assign(DB, cms.__new_packages);
+            const removedPackages = new Set(Array.isArray(cms.__removed_packages) ? cms.__removed_packages : []);
+            Object.entries(cms.__new_packages).forEach(([pkgId, pkg]) => {
+                if (!removedPackages.has(pkgId)) DB[pkgId] = pkg;
+            });
         }
 
         // Remover cards marcados para remoÃ§Ã£o
@@ -70,42 +73,6 @@
                 const el = document.getElementById(id);
                 if (el) el.remove();
             });
-        }
-
-        // Injetar cards de novos pacotes na home (index.html)
-        if (cms.__new_packages && typeof cms.__new_packages === 'object') {
-            const grid = document.querySelector('.cards-grid');
-            if (grid) {
-                const removed = Array.isArray(cms.__removed_cards) ? cms.__removed_cards : [];
-                Object.entries(cms.__new_packages).forEach(([pkgId, pkg]) => {
-                    const cardId = 'card-new-' + pkgId;
-                    if (removed.includes(cardId)) return;
-                    if (document.getElementById(cardId)) return;
-                    const article = document.createElement('article');
-                    article.className = 'card';
-                    article.id = cardId;
-                    article.setAttribute('onclick', "location.href='pacote.html?id=" + pkgId + "'");
-                    article.style.cursor = 'pointer';
-                    const img = pkg.images && pkg.images[0] ? pkg.images[0] : 'imagens/balneario_camboriu.png';
-                    const badgeClass = (pkg.badge||'').includes('Popular') ? 'card-badge--popular' : (pkg.badge||'').includes('Premium') ? 'card-badge--premium' : 'card-badge--hot';
-                    article.innerHTML = `
-                        <div class="card-img-wrap">
-                            <img src="${img}" alt="${pkg.title}" class="card-img" loading="lazy">
-                            <div class="card-badge ${badgeClass}">${pkg.badge || 'Novo'}</div>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-dest">${pkg.location || ''}</div>
-                            <h3 class="card-title">${pkg.title}</h3>
-                            <div class="card-dates">${pkg.duration || ''}</div>
-                            <div class="card-price-block">
-                                <div class="card-pix">Pix: <strong>R$ ${pkg.price || '-'}</strong></div>
-                                <div class="card-parcel">${pkg.parcelas || ''}</div>
-                            </div>
-                            <a href="pacote.html?id=${pkgId}" class="btn btn-card">Ver detalhes completos</a>
-                        </div>`;
-                    grid.appendChild(article);
-                });
-            }
         }
     }
 
@@ -324,13 +291,11 @@
         pPages() {
             const pages = [
                 { label: 'Home',           url: 'index.html' },
-                { label: 'Quem Somos',     url: 'sobre.html' },
-                { label: 'Clientes',       url: 'clientes.html' },
-                { label: 'Balneario',      url: 'pacote.html?id=balneario' },
-                { label: 'Copa do Mundo',  url: 'pacote.html?id=copa-canada' },
-                { label: 'Mexico',         url: 'pacote.html?id=copa-mexico' },
-                { label: 'EUA',            url: 'pacote.html?id=copa-eua' },
-                { label: 'America do Sul', url: 'pacote.html?id=copa-amsul' },
+                { label: 'Milão + São Moritz', url: 'pacote.html?id=milao_bernina' },
+                { label: 'Balneário Camboriú', url: 'pacote.html?id=balneario' },
+                { label: 'Maceió',             url: 'pacote.html?id=maceio' },
+                { label: 'Gramado',            url: 'pacote.html?id=gramado' },
+                { label: 'Bariloche',          url: 'pacote.html?id=bariloche' },
             ];
             const p = this.panel_('Navegacao - Paginas do Site');
             const links = pages.map(pg => {
@@ -641,7 +606,7 @@
                 article.style.position = 'relative';
                 article.appendChild(btn);
             });
-            // Cards Copa 2026
+            // Outros cards editáveis
             document.querySelectorAll('article.copa-card[id]').forEach(article => {
                 if (article.querySelector('.go-remove-btn')) return;
                 const btn = document.createElement('button');
@@ -686,9 +651,13 @@
                 if (!removed.includes(article.id)) removed.push(article.id);
                 this.store('__removed_cards', removed);
 
-                // Se for card de pacote novo, remove tambÃ©m de __new_packages
-                if (article.id.startsWith('card-new-')) {
-                    const pkgId = article.id.replace('card-new-', '');
+                const pkgId = article.id.replace(/^card-new-/, '').replace(/^card-/, '');
+                if (pkgId) {
+                    const removedPackages = this.cms.__removed_packages || [];
+                    if (!removedPackages.includes(pkgId)) removedPackages.push(pkgId);
+                    this.store('__removed_packages', removedPackages);
+
+                    // Se for pacote criado no ADM, remove tambem da lista de novos.
                     const newPkgs = this.cms.__new_packages || {};
                     if (newPkgs[pkgId]) {
                         delete newPkgs[pkgId];
@@ -708,22 +677,21 @@
                 <div class="go-info">Preencha os dados basicos. O pacote sera adicionado a lista e ficara disponivel via <code>pacote.html?id=SEU_ID</code>.</div>
                 <div class="go-f"><label>ID do pacote (sem espacos)</label>
                     <input type="text" id="gp-id" placeholder="ex: cancun, dubai, paris2026">
-                    <p class="go-hint-txt">Use letras minusculas, numeros e _ (underline). Ex: cancun, copa_dubai</p>
+                    <p class="go-hint-txt">Use letras minusculas, numeros e _ (underline). Ex: cancun, paris2026</p>
                 </div>
-                <div class="go-f"><label>Titulo</label><input type="text" id="gp-title" placeholder="Ex: Cancun - Caribe Mexicano"></div>
+                <div class="go-f"><label>Titulo</label><input type="text" id="gp-title" placeholder="Ex: Maceio - Praias Paradisiacas"></div>
                 <div class="go-f"><label>Subtitulo</label><input type="text" id="gp-sub" placeholder="Ex: Praias paradisiacas e resorts all inclusive"></div>
-                <div class="go-f"><label>Localizacao</label><input type="text" id="gp-loc" placeholder="Ex: Cancun, Mexico"></div>
+                <div class="go-f"><label>Localizacao</label><input type="text" id="gp-loc" placeholder="Ex: Maceio, AL"></div>
                 <div class="go-f"><label>Duracao</label><input type="text" id="gp-dur" placeholder="Ex: 7 dias / 6 noites"></div>
                 <div class="go-f"><label>Preco PIX (R$)</label><input type="text" id="gp-price" placeholder="Ex: 8.900,00"></div>
                 <div class="go-f"><label>Preco Cartao (R$)</label><input type="text" id="gp-cartao" placeholder="Ex: 9.350,00"></div>
                 <div class="go-f"><label>Parcelas</label><input type="text" id="gp-parc" placeholder="Ex: 10x de R$ 935,00 sem juros"></div>
-                <div class="go-f"><label>Pais</label><input type="text" id="gp-flag" placeholder="Ex: Mexico"></div>
+                <div class="go-f"><label>Pais</label><input type="text" id="gp-flag" placeholder="Ex: Brasil"></div>
                 <div class="go-f"><label>Badge</label><input type="text" id="gp-badge" placeholder="Ex: Oferta ou Popular"></div>
                 <div class="go-f"><label>Categoria</label>
                     <select id="gp-cat" style="width:100%;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-family:inherit;font-size:.9rem;" >
                         <option value="nacional">Nacional (aparece na aba Nacional)</option>
                         <option value="internacional">Internacional (aparece na aba Internacional)</option>
-                        <option value="copa">Copa 2026 (secao Copa)</option>
                     </select>
                 </div>
                 <div class="go-f"><label>Imagem 1 - Principal (URL)</label>
@@ -747,7 +715,7 @@
                     <textarea id="gp-nao" rows="3" placeholder="Um item por linha. Ex:&#10;Almocos e jantares&#10;Gorjetas"></textarea>
                 </div>
                 <div class="go-f"><label>Roteiro (um dia por linha)</label>
-                    <textarea id="gp-rot" rows="6" placeholder="Formato: Titulo do dia | Descricao&#10;Ex:&#10;Chegada a Cancun | Transfer ao resort. Check-in e tarde livre.&#10;Praia + Piscina | Dia de relaxamento no resort all inclusive."></textarea>
+                    <textarea id="gp-rot" rows="6" placeholder="Formato: Titulo do dia | Descricao&#10;Ex:&#10;Chegada ao destino | Transfer ao hotel. Check-in e tarde livre.&#10;Passeio principal | Dia dedicado ao roteiro contratado."></textarea>
                     <p class="go-hint-txt">Separe titulo e descricao com <strong>|</strong>. Um dia por linha.</p>
                 </div>
                 <div class="go-acts" style="margin-top:16px;">
@@ -772,11 +740,11 @@
                 const rotLines = p.querySelector('#gp-rot').value.split('\n').map(s=>s.trim()).filter(Boolean);
                 const roteiro = rotLines.map((line, i) => {
                     const [t, d] = line.split('|').map(s=>s.trim());
-                    return { dia: (i+1) + 'Âº Dia', title: t || ('Dia ' + (i+1)), desc: d || '' };
+                    return { dia: (i+1) + 'º Dia', title: t || ('Dia ' + (i+1)), desc: d || '' };
                 });
 
                 const images = [imgUrl, imgUrl2, imgUrl3].filter(Boolean);
-                if (!images.length) images.push('imagens/balneario_camboriu.png');
+                if (!images.length) images.push('imagens/balneario_camboriu.jpg');
 
                 const novoPacote = {
                     category:    p.querySelector('#gp-cat').value || 'nacional',
@@ -800,6 +768,12 @@
                 const existing = this.cms.__new_packages || {};
                 existing[id] = novoPacote;
                 this.store('__new_packages', existing);
+                if (Array.isArray(this.cms.__removed_packages) && this.cms.__removed_packages.includes(id)) {
+                    this.store('__removed_packages', this.cms.__removed_packages.filter(pkgId => pkgId !== id));
+                }
+                if (Array.isArray(this.cms.__removed_cards)) {
+                    this.store('__removed_cards', this.cms.__removed_cards.filter(cardId => cardId !== 'card-' + id && cardId !== 'card-new-' + id));
+                }
 
                 this.closePanel();
                 this.toast('Pacote "' + title + '" criado. Acesse: pacote.html?id=' + id, 'ok');
@@ -1018,6 +992,8 @@
                 'pkg-subtitle':     'subtitle',
                 'pkg-badge':        'badge',
                 'pkg-desc':         'desc',
+                'pkg-location':     'location',
+                'pkg-duration':     'duration',
             };
             const HOME_FIELDS = {
                 'pix':    'priceCartao',
@@ -1119,7 +1095,13 @@
         await loadAndApply(srv);
         if (editMode) {
             await ED.start(srv);
-            setTimeout(() => { ED.bindAll(); ED.injectRemoveButtons(); }, 500);
+            ED.bindAll();
+            ED.injectRemoveButtons();
+            const cardsGrid = document.querySelector('.cards-grid');
+            if (cardsGrid) {
+                const observer = new MutationObserver(() => ED.injectRemoveButtons());
+                observer.observe(cardsGrid, { childList: true, subtree: false });
+            }
         }
     });
 

@@ -230,7 +230,7 @@
 </main>
 
 <script>
-    const AUTH_EMAIL = 'admin@lcviagens.com.br';
+    const AUTH_EMAILS = ['admin@lcviagens.com.br', 'agencialcviagens@gmail.com'];
     const ADMIN_KEY = 'lc_auth';
     const SECRET_KEY = 'lc_secret';
     const LOCAL_SECRET = 'LCViagens@2026';
@@ -260,7 +260,7 @@
         btn.disabled = true;
         errEl.style.display = 'none';
 
-        if (email !== AUTH_EMAIL) {
+        if (!AUTH_EMAILS.includes(email)) {
             errTxt.textContent = 'Email nao reconhecido.';
             errEl.style.display = 'flex';
             btn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Entrar no editor';

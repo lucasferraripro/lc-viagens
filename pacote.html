@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacote â€” 321 GO! AgÃªncia de Viagens</title>
-    <meta name="description" content="Confira todos os detalhes deste pacote exclusivo da 321 GO! AgÃªncia de Viagens â€” PatrÃ­cia e Tatiana. Rio de Janeiro.">
+    <title>Pacote - LC Viagens</title>
+    <meta name="description" content="Confira os detalhes deste pacote da LC Viagens, agência de Clebert Rocha em Alagoas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <script src="js/database.js"></script>
-    <script src="editor.js?v=8" defer></script>
+    <script src="js/database.js?v=20260601-2"></script>
+    <script src="editor.js?v=20260601-2" defer></script>
 
 
     <style>
@@ -235,15 +235,15 @@
     <div class="container">
         <div class="hdr-inner">
             <a href="index.html" class="hdr-logo">
-                <img src="imagens/logo_lc.jfif" alt="321 GO! AgÃªncia de Viagens">
+                <img src="imagens/logo_lc.jfif" alt="LC Viagens">
             </a>
             <nav class="hdr-nav">
-                <a href="index.html">InÃ­cio</a>
+                <a href="index.html">Início</a>
                 <a href="index.html#pacotes">Pacotes</a>
                 <a href="index.html#sobre">Sobre</a>
                 <a href="index.html#contato">Contato</a>
             </nav>
-            <a href="https://wa.me/5582988017594?text=OlÃ¡%2C+visitei+o+site+e+quero+saber+mais!" class="hdr-cta" target="_blank" rel="noopener">ï¿½ï¿½ WhatsApp</a>
+            <a href="https://wa.me/5582988017594?text=Olá%2C+visitei+o+site+e+quero+saber+mais!" class="hdr-cta" target="_blank" rel="noopener">WhatsApp</a>
             <button class="burger" id="burger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -251,7 +251,7 @@
     </div>
 </header>
 <nav id="mpanel">
-    <a href="index.html">InÃ­cio</a>
+    <a href="index.html">Início</a>
     <a href="index.html#pacotes">Pacotes</a>
     <a href="index.html#sobre">Sobre</a>
     <a href="index.html#contato">Contato</a>
@@ -261,24 +261,24 @@
 <div class="hero-mini">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html">InÃ­cio</a>
+            <a href="index.html">Início</a>
             <i class="fa-solid fa-chevron-right" style="font-size:9px"></i>
             <a href="index.html#pacotes">Pacotes</a>
             <i class="fa-solid fa-chevron-right" style="font-size:9px"></i>
-            <span id="breadcrumb-title">Carregandoâ€¦</span>
+            <span id="breadcrumb-title">Carregando...</span>
         </div>
-        <div class="pkg-badge-hero" id="pkg-badge" data-eid="pkg-badge" data-elabel="Badge do Pacote">â€¦</div>
-        <h1 id="pkg-title" data-eid="pkg-title" data-elabel="TÃ­tulo do Pacote">Carregandoâ€¦</h1>
-        <p class="hero-mini-sub" id="pkg-subtitle" data-eid="pkg-subtitle" data-elabel="SubtÃ­tulo do Pacote"></p>
+        <div class="pkg-badge-hero" id="pkg-badge" data-eid="pkg-badge" data-elabel="Badge do Pacote">Oferta</div>
+        <h1 id="pkg-title" data-eid="pkg-title" data-elabel="Título do Pacote">Carregando...</h1>
+        <p class="hero-mini-sub" id="pkg-subtitle" data-eid="pkg-subtitle" data-elabel="Subtítulo do Pacote"></p>
         <div class="hero-meta">
-            <div class="meta-tag"><i class="fa-solid fa-location-dot"></i><span id="meta-loc">â€”</span></div>
-            <div class="meta-tag"><i class="fa-solid fa-moon"></i><span id="meta-dur">â€”</span></div>
+            <div class="meta-tag"><i class="fa-solid fa-location-dot"></i><span id="meta-loc" data-eid="pkg-location" data-elabel="Localização do Pacote">-</span></div>
+            <div class="meta-tag"><i class="fa-solid fa-moon"></i><span id="meta-dur" data-eid="pkg-duration" data-elabel="Duração do Pacote">-</span></div>
             <div class="meta-tag"><i class="fa-solid fa-star"></i> Atendimento personalizado</div>
         </div>
     </div>
 </div>
 
-<!-- CONTEÃšDO -->
+<!-- CONTEUDO -->
 <div class="container">
     <div class="pkg-layout">
 
@@ -288,7 +288,7 @@
             <div class="carousel" id="carousel">
                 <div class="carousel-track" id="track"></div>
                 <button class="car-btn car-prev" onclick="carMove(-1)" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="car-btn car-next" onclick="carMove(1)"  aria-label="PrÃ³ximo"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="car-btn car-next" onclick="carMove(1)"  aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <div class="car-dots" id="car-dots"></div>
             <div class="thumbs" id="thumbs"></div>
@@ -296,14 +296,14 @@
             <!-- SOBRE O DESTINO -->
             <div class="cblock" style="margin-top:28px">
                 <div class="cblock-title"><i class="fa-solid fa-earth-americas" style="color:var(--orange)"></i>Sobre o Destino</div>
-                <p class="pkg-desc" id="pkg-desc" data-eid="pkg-desc" data-elabel="DescriÃ§Ã£o do Destino">Carregandoâ€¦</p>
+                <p class="pkg-desc" id="pkg-desc" data-eid="pkg-desc" data-elabel="Descrição do Destino">Carregando...</p>
             </div>
 
-            <!-- INCLUSO / NÃƒO INCLUSO -->
+            <!-- INCLUSO / NAO INCLUSO -->
             <div class="cblock">
-                <div class="cblock-title"><i class="fa-solid fa-list-check" style="color:var(--orange)"></i>O que estÃ¡ incluso</div>
+                <div class="cblock-title"><i class="fa-solid fa-list-check" style="color:var(--orange)"></i>O que está incluso</div>
                 <ul class="incluso-list" id="incluso-list"></ul>
-                <span class="nao-incluso-label">NÃ£o incluso:</span>
+                <span class="nao-incluso-label">Não incluso:</span>
                 <ul class="nao-incluso-list" id="nao-incluso-list"></ul>
             </div>
 
@@ -317,25 +317,25 @@
         <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="price-card">
-                <div class="price-badge" id="sb-badge">â€¦</div>
+                <div class="price-badge" id="sb-badge">Oferta</div>
                 <p class="price-from">A partir de (PIX):</p>
-                <div class="price-num" id="price-num" data-eid="pkg-price" data-elabel="PreÃ§o do Pacote">R$ â€”</div>
-                <p class="price-pix" id="price-pix-info" data-eid="pkg-price-cartao" data-elabel="PreÃ§o no CartÃ£o"></p>
+                <div class="price-num" id="price-num" data-eid="pkg-price" data-elabel="Preço do Pacote">R$ -</div>
+                <p class="price-pix" id="price-pix-info" data-eid="pkg-price-cartao" data-elabel="Preço no Cartão"></p>
                 <p class="price-parc" id="price-parc" data-eid="pkg-parcelas" data-elabel="Parcelas"></p>
                 <div class="price-meta">
-                    <div class="pm-row"><i class="fa-solid fa-location-dot"></i><span id="sb-loc">â€”</span></div>
-                    <div class="pm-row"><i class="fa-solid fa-moon"></i><span id="sb-dur">â€”</span></div>
-                    <div class="pm-row"><i class="fa-solid fa-credit-card"></i><span data-eid="pkg-parcelamento" data-elabel="Info Parcelamento">AtÃ© 10x sem juros</span></div>
+                    <div class="pm-row"><i class="fa-solid fa-location-dot"></i><span id="sb-loc" data-eid="pkg-location" data-elabel="Localização do Pacote">-</span></div>
+                    <div class="pm-row"><i class="fa-solid fa-moon"></i><span id="sb-dur" data-eid="pkg-duration" data-elabel="Duração do Pacote">-</span></div>
+                    <div class="pm-row"><i class="fa-solid fa-credit-card"></i><span data-eid="pkg-parcelamento" data-elabel="Info Parcelamento">Até 10x sem juros</span></div>
                     <div class="pm-row"><i class="fa-solid fa-tag"></i><span data-eid="pkg-desconto" data-elabel="Desconto / Oferta">5% OFF no PIX</span></div>
-                    <div class="pm-row"><i class="fa-solid fa-headset"></i><span data-eid="pkg-atendimento" data-elabel="Atendimento">PatrÃ­cia e Tatiana â€” RJ</span></div>
+                    <div class="pm-row"><i class="fa-solid fa-headset"></i><span data-eid="pkg-atendimento" data-elabel="Atendimento">Atendimento personalizado com Clebert Rocha</span></div>
                 </div>
-                <a href="#" id="btn-wa" class="btn btn-wa" style="font-size:.95rem;height:50px;margin-bottom:10px;" data-eid="pkg-btn-wa" data-elabel="BotÃ£o WhatsApp â€“ Reserva">
+                <a href="#" id="btn-wa" class="btn btn-wa" style="font-size:.95rem;height:50px;margin-bottom:10px;" data-eid="pkg-btn-wa" data-elabel="Botão WhatsApp - Reserva">
                     <i class="fab fa-whatsapp"></i> Reservar pelo WhatsApp
                 </a>
                 <a href="index.html#contato" class="btn btn-outline">
                     <i class="fa-solid fa-envelope"></i> Falar por E-mail
                 </a>
-                <p class="price-note">*Valores por pessoa, sujeitos Ã  disponibilidade. CondiÃ§Ãµes: <strong>agencialcviagens@gmail.com</strong></p>
+                <p class="price-note">*Valores por pessoa, sujeitos à disponibilidade. Condições: <strong>agencialcviagens@gmail.com</strong></p>
             </div>
         </aside>
 
@@ -347,9 +347,9 @@
     <div class="container">
         <div class="outros-hdr">
             <div>
-                <p style="font-size:.78rem;color:var(--orange);text-transform:uppercase;font-weight:700;letter-spacing:.1em;margin-bottom:6px">âœˆ Explore mais</p>
-                <h2>Outros destinos incrÃ­veis</h2>
-                <p>ConheÃ§a mais pacotes da 321 GO!</p>
+                <p style="font-size:.78rem;color:var(--orange);text-transform:uppercase;font-weight:700;letter-spacing:.1em;margin-bottom:6px">Explore mais</p>
+                <h2>Outros destinos incríveis</h2>
+                <p>Conheça mais pacotes da LC Viagens</p>
             </div>
             <a href="index.html#pacotes" class="btn btn-orange" style="flex-shrink:0">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -362,8 +362,8 @@
     <div class="container">
         <div class="ft-top">
             <div class="ft-brand">
-                <img src="imagens/logo_lc.jfif" alt="321 GO!" class="ft-logo">
-                <p>AgÃªncia de viagens do Rio. PatrÃ­cia e Tatiana â€” experiÃªncias Ãºnicas e inesquecÃ­veis pelo Brasil e pelo mundo.</p>
+                <img src="imagens/logo_lc.jfif" alt="LC Viagens" class="ft-logo">
+                <p>Agência de viagens de Alagoas com atendimento personalizado de Clebert Rocha. Experiências únicas e inesquecíveis pelo Brasil e pelo mundo.</p>
                 <div style="display:flex;gap:10px;margin-top:14px">
                     <a href="https://instagram.com/lc_viagenss" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:14px;transition:all .2s" aria-label="Instagram">
                         <i class="fab fa-instagram"></i></a>
@@ -374,43 +374,39 @@
             <div>
                 <h5>Pacotes</h5>
                 <div class="ft-links">
-                    <a href="pacote.html?id=balneario">BalneÃ¡rio CamboriÃº</a>
-                    <a href="pacote.html?id=maceio">MaceiÃ³</a>
-                    <a href="pacote.html?id=curitiba">Curitiba</a>
+                    <a href="pacote.html?id=balneario">Balneário Camboriú</a>
+                    <a href="pacote.html?id=maceio">Maceió</a>
                     <a href="pacote.html?id=gramado">Gramado</a>
                     <a href="pacote.html?id=bariloche">Bariloche</a>
-                    <a href="pacote.html?id=porto">Porto Seguro</a>
                 </div>
             </div>
             <div>
-                <h5>Copa 2026 ðŸ†</h5>
+                <h5>Internacionais</h5>
                 <div class="ft-links">
-                    <a href="pacote.html?id=copa_mexico">Cidade do MÃ©xico</a>
-                    <a href="pacote.html?id=copa_miami">Miami + Orlando</a>
-                    <a href="pacote.html?id=copa_ny">Nova York Premium</a>
-                    <a href="pacote.html?id=copa_cancun">MÃ©xico + CancÃºn</a>
-                    <a href="pacote.html?id=copa_final">Final da Copa</a>
+                    <a href="pacote.html?id=milao_bernina">Milão + São Moritz</a>
+                    <a href="pacote.html?id=bariloche">Bariloche</a>
                 </div>
             </div>
             <div>
                 <h5>Contato</h5>
                 <div class="ft-links">
-                    <a href="https://wa.me/5582988017594"><i class="fab fa-whatsapp" style="color:var(--wa);margin-right:6px"></i>(21) 96650-1302</a>
-                    <span><i class="fa-solid fa-phone" style="color:var(--orange);margin-right:6px"></i>(21) 99095-0961</span>
+                    <a href="https://wa.me/5582988017594"><i class="fab fa-whatsapp" style="color:var(--wa);margin-right:6px"></i>(82) 98801-7594</a>
                     <span><i class="fa-solid fa-envelope" style="color:var(--orange);margin-right:6px"></i>agencialcviagens@gmail.com</span>
                     <span><i class="fa-solid fa-location-dot" style="color:var(--orange);margin-right:6px"></i>Alagoas, AL</span>
+                    <span><i class="fa-solid fa-building" style="color:var(--orange);margin-right:6px"></i>CNPJ: 61.444.098/0001-60</span>
+                    <span><i class="fa-solid fa-certificate" style="color:var(--orange);margin-right:6px"></i>CADASTUR: 61.444.098</span>
                 </div>
             </div>
         </div>
         <div class="ft-bottom">
-            <span>Â© 2026 321 GO! AgÃªncia de Viagens Â· PatrÃ­cia e Tatiana Â· Todos os direitos Reservados</span>
-            <span>Valores sujeitos a alteraÃ§Ãµes e disponibilidade.</span>
+            <span>© 2026 LC Viagens · Clebert Rocha · Todos os direitos reservados</span>
+            <span>Valores sujeitos a alterações e disponibilidade.</span>
         </div>
     </div>
 </footer>
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/5582988017594?text=OlÃ¡%2C+gostaria+de+saber+mais+sobre+os+pacotes!" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a href="https://wa.me/5582988017594?text=Olá%2C+gostaria+de+saber+mais+sobre+os+pacotes!" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="fab fa-whatsapp" style="font-size:1.3rem"></i>
     <span>Fale Conosco</span>
 </a>
@@ -420,12 +416,18 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
     const id = new URLSearchParams(location.search).get('id') || 'balneario';
+    const safeJson = async (response) => {
+        const contentType = response.headers.get('content-type') || '';
+        if (!response.ok || !contentType.includes('application/json')) return {};
+        const data = await response.json();
+        return data && typeof data === 'object' ? data : {};
+    };
 
-    // 1. Busca CMS do servidor (sempre, nÃ£o sÃ³ para pacotes novos)
+    // 1. Busca CMS do servidor (sempre, não só para pacotes novos)
     let srvCms = {};
     try {
         const r = await fetch('/api/content?_=' + Date.now());
-        if (r.ok) srvCms = await r.json();
+        srvCms = await safeJson(r);
     } catch (_) {}
 
     // 2. Mescla com rascunho local (admin em modo editor)
@@ -437,10 +439,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // CMS final = servidor + rascunho local (local tem prioridade)
     const cms = Object.assign({}, srvCms, localCms);
 
-    // ExpÃµe globalmente para o editor.js usar
+    // Expõe globalmente para o editor.js usar
     window.__LC_SRV_CMS = srvCms;
 
-    // 3. Aplica __db_overrides ao DB â€” FONTE ÃšNICA DE VERDADE
+    // 3. Aplica __db_overrides ao DB - FONTE ÚNICA DE VERDADE
     // Isso garante que pacote.html mostre os mesmos valores que a home
     if (cms.__db_overrides && typeof cms.__db_overrides === 'object') {
         Object.entries(cms.__db_overrides).forEach(([pkgId, overrides]) => {
@@ -451,25 +453,52 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // 4. Mescla pacotes novos criados pelo editor
+    const removedPackages = new Set(Array.isArray(cms.__removed_packages) ? cms.__removed_packages : []);
+    const removedCards = Array.isArray(cms.__removed_cards) ? cms.__removed_cards : [];
+    removedCards.forEach(cardId => {
+        const pkgId = cardId.replace(/^card-new-/, '').replace(/^card-/, '');
+        if (pkgId) removedPackages.add(pkgId);
+    });
+
     if (cms.__new_packages && typeof cms.__new_packages === 'object') {
         Object.entries(cms.__new_packages).forEach(([pkgId, pkg]) => {
+            if (removedPackages.has(pkgId)) return;
             if (!pkg.category) pkg.category = 'nacional';
             DB[pkgId] = pkg;
         });
     }
 
-    // 5. Renderiza o pacote com o DB jÃ¡ atualizado
-    renderPacote(id, cms);
+    if (removedPackages.has(id) || !DB[id]) {
+        renderPacoteIndisponivel(id);
+        applyPacoteCmsOverrides(id, cms);
+        return;
+    }
+
+    // 5. Renderiza o pacote com o DB já atualizado
+    renderPacote(id, cms, removedPackages);
 
     // 6. Aplica overrides de texto/imagem do CMS nos elementos renderizados
     applyPacoteCmsOverrides(id, cms);
 });
 
-function renderPacote(id, cms) {
-    cms = cms || {};
-    const pkg = DB[id] || DB.balneario;
+function renderPacoteIndisponivel(id) {
+    document.title = 'Pacote indisponível - LC Viagens';
+    document.getElementById('breadcrumb-title').textContent = 'Pacote indisponível';
+    document.getElementById('pkg-title').textContent = 'Pacote indisponível';
+    document.getElementById('pkg-subtitle').textContent = 'Este pacote foi removido ou ainda não está publicado.';
+    document.getElementById('pkg-badge').textContent = 'Aviso';
+    document.getElementById('sb-badge').textContent = 'Aviso';
+    document.getElementById('pkg-desc').textContent = 'Volte para a página inicial e escolha um pacote publicado pela LC Viagens.';
+    document.getElementById('btn-wa').href = `https://wa.me/${SITE.whatsapp}`;
+    document.getElementById('price-num').textContent = 'R$ -';
+}
 
-    // Helper: lÃª valor do CMS se existir, senÃ£o usa o DB
+function renderPacote(id, cms, removedPackages) {
+    cms = cms || {};
+    removedPackages = removedPackages || new Set();
+    const pkg = DB[id];
+
+    // Helper: lê valor do CMS se existir, senão usa o DB
     // Suporta tanto "gramado-pkg-price" (pacote.html) quanto "pix-gramado" (home)
     function cmsText(eid) {
         const d = cms[eid];
@@ -486,9 +515,11 @@ function renderPacote(id, cms) {
     // Prefixar eids com ID do pacote
     ['pkg-badge','pkg-title','pkg-subtitle','pkg-desc',
      'pkg-price','pkg-price-cartao','pkg-parcelas','pkg-btn-wa',
-     'pkg-parcelamento','pkg-desconto','pkg-atendimento'].forEach(function(eid) {
-        const el = document.querySelector('[data-eid="' + eid + '"]');
-        if (el) el.dataset.eid = id + '-' + eid;
+     'pkg-parcelamento','pkg-desconto','pkg-atendimento',
+     'pkg-location','pkg-duration'].forEach(function(eid) {
+        document.querySelectorAll('[data-eid="' + eid + '"]').forEach(function(el) {
+            el.dataset.eid = id + '-' + eid;
+        });
     });
 
     // Valores com prioridade: CMS > DB
@@ -499,39 +530,41 @@ function renderPacote(id, cms) {
     const subtitle   = cmsText(id+'-pkg-subtitle')    || pkg.subtitle;
     const badge      = cmsText(id+'-pkg-badge')       || pkg.badge;
     const desc       = cmsText(id+'-pkg-desc')        || pkg.desc;
+    const locationTxt= cmsText(id+'-pkg-location')    || pkg.location;
+    const durationTxt= cmsText(id+'-pkg-duration')    || pkg.duration;
 
-    document.title = title + ' â€” 321 GO! AgÃªncia de Viagens';
+    document.title = title + ' - LC Viagens';
     document.getElementById('breadcrumb-title').textContent = title;
     document.getElementById('pkg-title').textContent        = title;
     document.getElementById('pkg-subtitle').textContent     = subtitle;
     document.getElementById('pkg-badge').textContent        = badge;
     document.getElementById('sb-badge').textContent         = badge;
-    document.getElementById('meta-loc').textContent         = pkg.location;
-    document.getElementById('meta-dur').textContent         = pkg.duration;
+    document.getElementById('meta-loc').textContent         = locationTxt;
+    document.getElementById('meta-dur').textContent         = durationTxt;
     document.getElementById('pkg-desc').textContent         = desc;
-    document.getElementById('sb-loc').textContent           = pkg.location;
-    document.getElementById('sb-dur').textContent           = pkg.duration;
+    document.getElementById('sb-loc').textContent           = locationTxt;
+    document.getElementById('sb-dur').textContent           = durationTxt;
     document.getElementById('price-num').textContent        = 'R$ ' + price;
     document.getElementById('price-parc').innerHTML         = 'ou <strong>' + parcelas + '</strong>';
     if (priceCartao) {
-        // priceCartao pode ser "2.550,50" (do DB) ou "No cartÃ£o: R$ 2.550,50" (do CMS antigo)
-        const numOnly = priceCartao.replace(/^No cart[aÃ£]o:\s*/i,'').replace(/^R\$\s*/,'').replace(/<[^>]+>/g,'').trim();
-        document.getElementById('price-pix-info').innerHTML = 'No cartÃ£o: <strong>R$ ' + numOnly + '</strong>';
+        // priceCartao pode ser "2.550,50" (do DB) ou "No cartão: R$ 2.550,50" (do CMS antigo)
+        const numOnly = priceCartao.replace(/^No cart[aã]o:\s*/i,'').replace(/^R\$\s*/,'').replace(/<[^>]+>/g,'').trim();
+        document.getElementById('price-pix-info').innerHTML = 'No cartão: <strong>R$ ' + numOnly + '</strong>';
     }
 
-    // â”€â”€ WhatsApp â”€â”€
+    // WhatsApp
     const waMsg = encodeURIComponent(
-        `OlÃ¡, PatrÃ­cia e Tatiana! 321 GO!\n\n` +
+        `Olá, Clebert! Gostaria de saber mais pela LC Viagens.\n\n` +
         `Tenho interesse no pacote *${pkg.title}*\n\n` +
-        `ðŸ“ Destino: ${pkg.location}\n` +
-        `ðŸŒ™ PerÃ­odo: ${pkg.duration}\n` +
-        `ðŸ‘¥ Qtd de Pessoas: \n` +
-        `ðŸ“… Data Pretendida: \n\n` +
+        `Destino: ${locationTxt}\n` +
+        `Período: ${durationTxt}\n` +
+        `Qtd de pessoas: \n` +
+        `Data pretendida: \n\n` +
         `Vim pelo site e aguardo retorno!`
     );
     document.getElementById('btn-wa').href = `https://wa.me/${SITE.whatsapp}?text=${waMsg}`;
 
-    // â”€â”€ Carrossel â”€â”€
+    // Carrossel
     const track  = document.getElementById('track');
     const dotsEl = document.getElementById('car-dots');
     const thumbsEl = document.getElementById('thumbs');
@@ -545,7 +578,7 @@ function renderPacote(id, cms) {
         img.src = src; img.alt = pkg.title + ' ' + (i+1);
         img.loading = i === 0 ? 'eager' : 'lazy';
         img.dataset.eid = eid;
-        img.dataset.elabel = pkg.title + ' â€“ Foto ' + (i+1);
+        img.dataset.elabel = pkg.title + ' - Foto ' + (i+1);
         slide.appendChild(img); track.appendChild(slide);
 
         const dot = document.createElement('div');
@@ -577,7 +610,7 @@ function renderPacote(id, cms) {
         if (Math.abs(diff) > 40) carMove(diff > 0 ? 1 : -1);
     });
 
-    // â”€â”€ Incluso / NÃ£o incluso â”€â”€
+    // Incluso / Não incluso
     const inclEl = document.getElementById('incluso-list');
     pkg.incluso.forEach((item, idx) => {
         const li = document.createElement('li');
@@ -593,25 +626,28 @@ function renderPacote(id, cms) {
         const nEl = document.getElementById('nao-incluso-list');
         pkg.nao_incluso.forEach(item => {
             const li = document.createElement('li');
-            li.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> ${item}`;
+            li.dataset.eid    = id + '-nao-incluso-' + nEl.children.length;
+            li.dataset.elabel = 'Não incluso ' + (nEl.children.length + 1);
+            li.className = 'go-incluso';
+            li.textContent = item;
             nEl.appendChild(li);
         });
     }
 
-    // â”€â”€ Roteiro â”€â”€
+    // Roteiro
     const rotEl = document.getElementById('roteiro-list');
     pkg.roteiro.forEach((r, i) => {
         const div = document.createElement('div');
         div.className = 'rot-item';
-        const num = r.dia.replace('â”¬â•‘ Dia','').replace('st','').replace('nd','').replace('rd','').replace('th','').trim();
+        const num = r.dia.replace('º Dia','').replace('Dia','').replace('st','').replace('nd','').replace('rd','').replace('th','').trim();
         div.innerHTML = `
             <div class="rot-day">
-                <div class="rot-day-num">${num}</div>
+                <div class="rot-day-num" data-eid="${id}-roteiro-${i}-dia" data-elabel="Roteiro ${i + 1} - Dia">${num}</div>
                 <div class="rot-day-lbl">dia</div>
             </div>
             <div class="rot-body">
-                <h4>${r.title}</h4>
-                <p>${r.desc}</p>
+                <h4 data-eid="${id}-roteiro-${i}-title" data-elabel="Roteiro ${i + 1} - Título">${r.title}</h4>
+                <p data-eid="${id}-roteiro-${i}-desc" data-elabel="Roteiro ${i + 1} - Descrição">${r.desc}</p>
             </div>`;
         rotEl.appendChild(div);
     });
@@ -619,7 +655,7 @@ function renderPacote(id, cms) {
     // Usa o mapa de imagens centralizado do database.js
     const thumbMap = (typeof THUMB !== 'undefined') ? THUMB : {};
 
-    const outros = Object.keys(DB).filter(k => k !== id).slice(0, 4);
+    const outros = Object.keys(DB).filter(k => k !== id && !removedPackages.has(k)).slice(0, 4);
 
     const cardsEl = document.getElementById('outros-cards');
     outros.forEach(k => {
@@ -644,8 +680,8 @@ function renderPacote(id, cms) {
     });
 } // fim renderPacote
 
-// â”€â”€ Aplica overrides do CMS nos elementos apÃ³s renderizar (editor visual) â”€â”€
-// NecessÃ¡rio para que o editor mostre os valores corretos ao abrir a pÃ¡gina
+// Aplica overrides do CMS nos elementos após renderizar (editor visual)
+// Necessário para que o editor mostre os valores corretos ao abrir a página
 function applyPacoteCmsOverrides(id, cms) {
     try {
         if (!cms) {
@@ -664,7 +700,7 @@ function applyPacoteCmsOverrides(id, cms) {
     } catch (_) {}
 }
 
-// â”€â”€ Mobile menu â”€â”€
+// Mobile menu
 const burger = document.getElementById('burger');
 const panel  = document.getElementById('mpanel');
 burger.addEventListener('click', () => {

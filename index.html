@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="js/database.js"></script>
-  <script src="editor.js?v=1" defer></script>
+  <script src="js/database.js?v=20260601-2"></script>
+  <script src="editor.js?v=20260601-2" defer></script>
 </head>
 <body>
 
@@ -107,16 +107,53 @@
   </section>
 
   <script>
-  (function initPackages() {
+  (async function initPackages() {
     const grid = document.getElementById('cards-grid');
     const tabs = document.querySelectorAll('.pkg-tab');
-    let removedCards = [];
+    let localCms = {};
+    try {
+      localCms = JSON.parse(localStorage.getItem('lc_cms_v1') || '{}');
+    } catch (_) {}
 
-    const srvCms = window.__LC_SRV_CMS || {};
-    if (srvCms.__removed_cards) removedCards = srvCms.__removed_cards;
+    let srvCms = window.__LC_SRV_CMS || {};
+    const safeJson = async (response) => {
+      const contentType = response.headers.get('content-type') || '';
+      if (!response.ok || !contentType.includes('application/json')) return {};
+      const data = await response.json();
+      return data && typeof data === 'object' ? data : {};
+    };
+
+    if (location.protocol !== 'file:') {
+      try {
+        const r = await fetch('/api/content?_=' + Date.now());
+        srvCms = await safeJson(r);
+      } catch (_) {}
+    }
+    window.__LC_SRV_CMS = srvCms;
+    const cms = Object.assign({}, srvCms, localCms);
+    const removedCards = Array.isArray(cms.__removed_cards) ? cms.__removed_cards : [];
+    const removedPackages = new Set(Array.isArray(cms.__removed_packages) ? cms.__removed_packages : []);
+    removedCards.forEach(cardId => {
+      const pkgId = cardId.replace(/^card-new-/, '').replace(/^card-/, '');
+      if (pkgId) removedPackages.add(pkgId);
+    });
+
+    if (cms.__db_overrides && typeof DB !== 'undefined') {
+      Object.entries(cms.__db_overrides).forEach(([pkgId, ov]) => {
+        if (DB[pkgId] && ov && typeof ov === 'object') Object.assign(DB[pkgId], ov);
+      });
+    }
+
+    if (cms.__new_packages && typeof DB !== 'undefined') {
+      Object.entries(cms.__new_packages).forEach(([pkgId, pkg]) => {
+        if (removedPackages.has(pkgId)) return;
+        if (!pkg.category) pkg.category = 'nacional';
+        DB[pkgId] = pkg;
+      });
+    }
 
     function buildCard(id, p) {
-      const thumb = (typeof THUMB !== 'undefined' && THUMB[id]) ? THUMB[id] : (p.images && p.images[0]) || 'imagens/balneario_camboriu.png';
+      const thumb = (typeof THUMB !== 'undefined' && THUMB[id]) ? THUMB[id] : (p.images && p.images[0]) || 'imagens/balneario_camboriu.jpg';
       const badgeCls = p.badge && p.badge.includes('💎') ? 'card-badge--premium' : p.badge && p.badge.includes('⭐') ? 'card-badge--popular' : 'card-badge--hot';
       const incItems = (p.incluso || []).slice(0, 5).map(i => `<li>${i}</li>`).join('');
       const article = document.createElement('article');
@@ -149,16 +186,9 @@
 
     function renderCat(cat) {
       grid.innerHTML = '';
-      const cms = JSON.parse(localStorage.getItem('lc_cms_v1') || '{}');
-      const srvCms = window.__LC_SRV_CMS || {};
-      if (srvCms.__db_overrides && typeof DB !== 'undefined') {
-        Object.entries(srvCms.__db_overrides).forEach(([pkgId, ov]) => {
-          if (DB[pkgId]) Object.assign(DB[pkgId], ov);
-        });
-      }
       Object.entries(DB).forEach(([id, p]) => {
         if (cat !== 'todos' && (p.category || 'nacional') !== cat) return;
-        if (removedCards.includes('card-' + id) || removedCards.includes('card-new-' + id)) return;
+        if (removedPackages.has(id) || removedCards.includes('card-' + id) || removedCards.includes('card-new-' + id)) return;
         const card = buildCard(id, p);
         grid.appendChild(card);
         ['pix','parcel','dest','titulo','badge','data','incluso','img'].forEach(field => {
@@ -388,6 +418,8 @@
           <li data-eid="footer-tel1" data-elabel="Telefone 1 – Footer">📞 (82) 98801-7594</li>
           <li data-eid="footer-email" data-elabel="E-mail – Footer">✉️ agencialcviagens@gmail.com</li>
           <li data-eid="footer-insta" data-elabel="Instagram – Footer">📸 @lc_viagenss</li>
+          <li data-eid="footer-cnpj" data-elabel="CNPJ – Footer">🏢 CNPJ: 61.444.098/0001-60</li>
+          <li data-eid="footer-cadastur" data-elabel="CADASTUR – Footer">✅ CADASTUR: 61.444.098</li>
         </ul>
       </div>
     </div>
@@ -425,6 +457,6 @@
     <span class="wpp-float-label">Fale Conosco</span>
   </a>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=20260601-2"></script>
 </body>
 </html>

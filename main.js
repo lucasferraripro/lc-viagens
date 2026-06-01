@@ -64,7 +64,8 @@
         `👥 *Viajantes:* ${viajantes}\n` +
         `📝 *Obs:* ${obs || 'Nenhuma'}`
       );
-      window.open(`https://wa.me/5582988017594?text=${msg}`, '_blank');
+      const waNumber = (window.SITE && SITE.whatsapp) ? SITE.whatsapp : '5582988017594';
+      window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
     });
   }
 
