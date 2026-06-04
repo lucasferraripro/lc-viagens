@@ -157,8 +157,7 @@ const DB = {
         badge: '⭐ Popular',
         images: [
             'imagens/gramado.jpg',
-            'imagens/bariloche.jpg',
-            'imagens/curitiba_trem.jpg'
+            'imagens/gramado.png'
         ],
         dates: '📅 Consulte datas disponíveis',
         desc: 'Gramado é a joia da Serra Gaúcha — uma cidade que encanta com sua arquitetura enxaimel, ruas floridas, chocolates artesanais, cafés coloniais e fondue. A famosa Noite Gaúcha leva os visitantes para um espetáculo cultural com danças, músicas e gastronomia típica.',
@@ -194,8 +193,7 @@ const DB = {
         badge: '💎 Premium',
         images: [
             'imagens/bariloche.jpg',
-            'imagens/curitiba_opera.jpg',
-            'imagens/gramado.jpg'
+            'imagens/bariloche.png'
         ],
         dates: '📅 Consulte datas disponíveis',
         desc: 'Bariloche é o destino dos sonhos na Patagônia Argentina — lagos cristalinos, montanhas nevadas, chocolates artesanais e a charmosa arquitetura alpina que lembra a Suíça. O Circuito Chico é considerado um dos passeios mais bonitos da América do Sul.',

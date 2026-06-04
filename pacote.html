@@ -358,22 +358,23 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="pkg-footer">
     <div class="container">
         <div class="ft-top">
             <div class="ft-brand">
-                <img src="imagens/logo_lc.jfif" alt="LC Viagens" class="ft-logo">
-                <p>Agência de viagens de Alagoas com atendimento personalizado de Clebert Rocha. Experiências únicas e inesquecíveis pelo Brasil e pelo mundo.</p>
+                <img src="imagens/logo_lc.jfif" alt="LC Viagens" class="ft-logo" data-eid="footer-logo" data-elabel="Logo - Footer">
+                <p data-eid="footer-tagline" data-elabel="Tagline - Footer">Sua viagem dos sonhos começa com a LC Viagens!</p>
                 <div style="display:flex;gap:10px;margin-top:14px">
-                    <a href="https://instagram.com/lc_viagenss" target="_blank" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:14px;transition:all .2s" aria-label="Instagram">
+                    <a href="https://instagram.com/lc_viagenss" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:14px;transition:all .2s" aria-label="Instagram">
                         <i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/5582988017594" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:14px;transition:all .2s" aria-label="WhatsApp">
+                    <a href="https://wa.me/5582988017594" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:14px;transition:all .2s" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div>
-                <h5>Pacotes</h5>
+                <h5 data-eid="footer-col2-titulo" data-elabel="Título Coluna 2 - Footer">Destinos</h5>
                 <div class="ft-links">
+                    <a href="pacote.html?id=milao_bernina">Milão - Trem Bernina</a>
                     <a href="pacote.html?id=balneario">Balneário Camboriú</a>
                     <a href="pacote.html?id=maceio">Maceió</a>
                     <a href="pacote.html?id=gramado">Gramado</a>
@@ -381,26 +382,27 @@
                 </div>
             </div>
             <div>
-                <h5>Internacionais</h5>
+                <h5 data-eid="footer-col3-titulo" data-elabel="Título Coluna 3 - Footer">Internacionais</h5>
                 <div class="ft-links">
                     <a href="pacote.html?id=milao_bernina">Milão + São Moritz</a>
                     <a href="pacote.html?id=bariloche">Bariloche</a>
                 </div>
             </div>
             <div>
-                <h5>Contato</h5>
+                <h5 data-eid="footer-col4-titulo" data-elabel="Título Coluna 4 - Footer">Contato</h5>
                 <div class="ft-links">
-                    <a href="https://wa.me/5582988017594"><i class="fab fa-whatsapp" style="color:var(--wa);margin-right:6px"></i>(82) 98801-7594</a>
-                    <span><i class="fa-solid fa-envelope" style="color:var(--orange);margin-right:6px"></i>agencialcviagens@gmail.com</span>
-                    <span><i class="fa-solid fa-location-dot" style="color:var(--orange);margin-right:6px"></i>Alagoas, AL</span>
-                    <span><i class="fa-solid fa-building" style="color:var(--orange);margin-right:6px"></i>CNPJ: 61.444.098/0001-60</span>
-                    <span><i class="fa-solid fa-certificate" style="color:var(--orange);margin-right:6px"></i>CADASTUR: 61.444.098</span>
+                    <span data-eid="footer-endereco" data-elabel="Endereço - Footer"><i class="fa-solid fa-location-dot" style="color:var(--orange);margin-right:6px"></i>Alagoas - AL</span>
+                    <a href="https://wa.me/5582988017594" target="_blank" rel="noopener" data-eid="footer-tel1" data-elabel="Telefone 1 - Footer"><i class="fab fa-whatsapp" style="color:var(--wa);margin-right:6px"></i>(82) 98801-7594</a>
+                    <span data-eid="footer-email" data-elabel="E-mail - Footer"><i class="fa-solid fa-envelope" style="color:var(--orange);margin-right:6px"></i>agencialcviagens@gmail.com</span>
+                    <span data-eid="footer-insta" data-elabel="Instagram - Footer"><i class="fab fa-instagram" style="color:var(--orange);margin-right:6px"></i>@lc_viagenss</span>
+                    <span data-eid="footer-cnpj" data-elabel="CNPJ - Footer"><i class="fa-solid fa-building" style="color:var(--orange);margin-right:6px"></i>CNPJ: 61.444.098/0001-60</span>
+                    <span data-eid="footer-cadastur" data-elabel="CADASTUR - Footer"><i class="fa-solid fa-certificate" style="color:var(--orange);margin-right:6px"></i>CADASTUR: 61.444.098</span>
                 </div>
             </div>
         </div>
         <div class="ft-bottom">
-            <span>© 2026 LC Viagens · Clebert Rocha · Todos os direitos reservados</span>
-            <span>Valores sujeitos a alterações e disponibilidade.</span>
+            <span data-eid="footer-copyright" data-elabel="Copyright - Footer">© 2026 LC Viagens · Clebert Rocha · Todos os direitos reservados</span>
+            <span data-eid="footer-disclaimer" data-elabel="Aviso Legal - Footer">Valores sujeitos a alterações. Condicionado à disponibilidade.</span>
         </div>
     </div>
 </footer>
@@ -665,7 +667,7 @@ function renderPacote(id, cms, removedPackages) {
         card.className = 'card-link';
         card.innerHTML = `
             <div class="card-img">
-                <img src="${thumbMap[k]||pkg.images[0]}" alt="${p.title}" loading="lazy">
+                <img src="${thumbMap[k] || (p.images && p.images[0]) || 'imagens/balneario_camboriu.jpg'}" alt="${p.title}" loading="lazy">
                 <div class="card-flag">${p.flag}</div>
             </div>
             <div class="card-body">

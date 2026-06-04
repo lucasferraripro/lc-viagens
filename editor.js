@@ -271,13 +271,20 @@
             this.addNavLink(el);
         },
 
-        /* â”€â”€ BotÃ£o de navegaÃ§Ã£o para cards com onclick â”€â”€ */
+        /* Botao de navegacao para cards de pacote */
         addNavLink(el) {
-            const article = el.closest('article[onclick]');
+            const article = el.closest('article[id^="card-"], article[onclick]');
             if (!article) return;
-            const match = article.getAttribute('onclick').match(/href='([^']+)'/);
-            if (!match) return;
-            const url = match[1];
+            let url = '';
+            const onclick = article.getAttribute('onclick') || '';
+            const match = onclick.match(/href='([^']+)'/);
+            if (match) {
+                url = match[1];
+            } else {
+                const pkgId = article.id.replace(/^card-new-/, '').replace(/^card-/, '');
+                if (pkgId) url = 'pacote.html?id=' + pkgId;
+            }
+            if (!url) return;
             const pb = this.panel && this.panel.querySelector('.go-pb');
             if (!pb) return;
             const nav = document.createElement('div');
