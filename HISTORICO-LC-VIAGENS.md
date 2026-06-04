@@ -1,6 +1,6 @@
 # Historico operacional - LC Viagens
 
-Atualizado em: 18/05/2026
+Atualizado em: 04/06/2026
 
 ## Dados do projeto
 
@@ -29,6 +29,70 @@ Atualizado em: 18/05/2026
 10. Feito redeploy para aplicar variaveis.
 11. Testado `/api/auth`.
 12. Testado `/api/publish`.
+
+## Atualizacao - 04/06/2026
+
+Auditoria geral e correcoes feitas no site LC Viagens.
+
+Arquivos alterados:
+
+- `content.json`
+- `editor.js`
+- `js/database.js`
+- `pacote.html`
+- `style.css`
+
+Correcoes aplicadas:
+
+1. Corrigido texto salvo no CMS com caracteres quebrados no hero:
+   - `Sua próxima aventura`
+   - `começa aqui`
+2. Corrigido rodape de `pacote.html` para usar os mesmos `data-eid` editaveis da home.
+3. Corrigida sincronizacao do rodape entre painel administrativo, home e paginas de pacote.
+4. Corrigido fallback de imagem nos cards "Outros destinos" da pagina de pacote.
+5. Corrigidas fotos dos pacotes:
+   - Gramado agora usa fotos de Gramado.
+   - Bariloche agora usa fotos de Bariloche.
+6. Corrigida cor do logo textual da home:
+   - antes usava `var(--orange)`, variavel inexistente no CSS da home.
+   - agora usa `var(--blue)`.
+7. Corrigido link "Abrir pacote" do painel admin para funcionar com cards dinamicos atuais.
+
+Validacoes feitas:
+
+- `content.json` valido.
+- `main.js`, `editor.js` e `js/database.js` sem erro de sintaxe.
+- Sem imagens ausentes no banco de pacotes.
+- Sem links de pacote apontando para ID inexistente.
+- Sem IDs HTML duplicados em `index.html`, `pacote.html` e `admin/login.html`.
+- Sem ancoras quebradas nessas paginas.
+- `git diff --check` sem erro.
+
+Deploy:
+
+```text
+Production: https://lc-viagens-5xnhneqxs-lucasferraris-projects-65d9de34.vercel.app
+Alias: https://lc-viagens.vercel.app
+```
+
+Verificacao pos-deploy:
+
+```text
+https://lc-viagens.vercel.app => 200 OK
+https://lc-viagens.vercel.app/pacote.html?id=gramado => 200 OK
+```
+
+Git:
+
+```text
+Commit: 6637ab3 Corrige sincronizacao e imagens dos pacotes
+Branch: master
+Push: origin/master
+```
+
+Observacao:
+
+- A pasta `lp viagens/` continua nao rastreada no Git e nao foi alterada.
 
 ## Variaveis no Vercel
 
