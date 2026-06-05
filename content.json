@@ -4,5 +4,14 @@
   "__db_overrides": {},
   "hero-title": {
     "html": "\n        Sua próxima aventura<br>começa <span class=\"hero-accent\">aqui!</span>"
+  },
+  "logo": {
+    "html": "L&amp;C Viagens"
+  },
+  "top-text-2": {
+    "html": "L&amp;C Viagens ✈",
+    "style": {
+      "color": "#05f5f1"
+    }
   }
 }
