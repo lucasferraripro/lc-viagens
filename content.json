@@ -1,7 +1,75 @@
 {
   "__removed_cards": [],
-  "__new_packages": {},
-  "__db_overrides": {},
+  "__new_packages": {
+    "roma": {
+      "category": "internacional",
+      "title": "Roma: serviço de sessão fotográfica com Fiat 500 vintage",
+      "subtitle": "Descubra a beleza de Roma num Fiat 500 vintage. Passeie por marcos icónicos e capture o momento com fotos profissionais.",
+      "location": "Roma, Italia",
+      "duration": "3 horas",
+      "price": "A partir R$712,98",
+      "priceCartao": "R$798,56",
+      "parcelas": "3x R$266,33 sem juros",
+      "flag": "Italia",
+      "badge": "1.003 avaliações",
+      "images": [
+        "https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=1920,dpr=1/tour_img/2eb0826367973519640facb27ab848597cfb757d9366ee6728ea250168e008c8.jpg",
+        "https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=1920,dpr=1/tour_img/5f4cbce1af1e76363df7a07b886fb6ad81490f7a21858bf1c9cac2238d77339d.jpg",
+        "https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=1920,dpr=1/tour_img/ae6d9a2972f919a7a5e4931f6f2cee51d5c1265b247b7427122b683bd5fb1e1f.jpg"
+      ],
+      "desc": "Vivencie Roma como nunca antes com um passeio de Fiat 500 vintage, onde o charme do estilo italiano encontra a beleza atemporal da Cidade Eterna. Começando em um ponto de encontro cuidadosamente selecionado, você entrará no icônico Fiat 500, um carro que incorpora o romance e a elegância da era de ouro da Itália. Ao dirigir pelas ruas estreitas e históricas de Roma, você vai passar por ruínas antigas, fontes majestosas e praças movimentadas, com a vida vibrante e a história da cidade se desenrolando a cada esquina. Em caso de chuva, vamos levar a versão com teto do carro Fiat 500 se você fez uma reserva para a opção conversível. O passeio será realizado de forma privada para tornar sua estadia na Cidade Eterna inesquecível!\nO que está incluso nesta experiência\n- Carros Fiat 500 Vintage (transporte grátis)\n- Motorista\n- Fotos profissionais\n- Traslado de ida e volta do centro da cidade (apenas para reservas privadas)\nQuais lugares a gente vai visitar?\n- Coliseu (parada para fotos)\n- Circo Máximo (passagem)\n- Jardim de Laranjas (vista da cidade do terraço / parada)\n- Trastevere (passagem)\n-Fontana Del Acqua (passagem)\n- Colina Gianocolo, o ponto mais alto de Roma (foto e vista)\nPARA CARRO CONVERSÍVEL CABRIOLET, SELECIONE ENTRE AS OPÇÕES",
+      "incluso": [
+        "Transporte gratuito em Fiat 500",
+        "Fotos profissionais",
+        "Teto aberto (se a opção for selecionada)",
+        "Fotógrafo"
+      ],
+      "nao_incluso": [
+        "Almoço, Jantar e gorjetas"
+      ],
+      "roteiro": [
+        {
+          "dia": "1º Dia",
+          "title": "Volte no tempo e sinta a nostalgia de dirigir um Fiat 500 clássico",
+          "desc": ""
+        },
+        {
+          "dia": "2º Dia",
+          "title": "Passeie pelos pontos turísticos mais emblemáticos de Roma, como o Coliseu e o ponto mais alto de Roma.",
+          "desc": ""
+        },
+        {
+          "dia": "3º Dia",
+          "title": "Opções disponíveis para grupos pequenos ou carros privados",
+          "desc": ""
+        },
+        {
+          "dia": "4º Dia",
+          "title": "Perfeito para casais, famílias e ocasiões especiais",
+          "desc": ""
+        },
+        {
+          "dia": "5º Dia",
+          "title": "Desfrute de uma sessão fotográfica profissional durante o passeio",
+          "desc": ""
+        }
+      ]
+    }
+  },
+  "__db_overrides": {
+    "roma": {
+      "price": "712,98"
+    },
+    "milao_bernina": {
+      "parcelas": "3x de R$ 399,34 sem juros"
+    },
+    "bariloche": {
+      "parcelas": "10x de R$ 424,90 sem juros"
+    },
+    "maceio": {
+      "parcelas": "10x de R$269,00 sem juros"
+    }
+  },
   "hero-title": {
     "html": "\n        Sua próxima aventura<br>começa <span class=\"hero-accent\">aqui!</span>"
   },
@@ -13,5 +81,50 @@
     "style": {
       "color": "#05f5f1"
     }
+  },
+  "roma-pkg-price": {
+    "html": "R$712,98"
+  },
+  "roma-roteiro-4-title": {
+    "html": "<br>"
+  },
+  "roma-roteiro-3-title": {
+    "html": "<br>"
+  },
+  "roma-roteiro-2-title": {
+    "html": "<br>"
+  },
+  "roma-roteiro-1-title": {
+    "html": "<br>"
+  },
+  "roma-roteiro-3-dia": {
+    "html": "<br>"
+  },
+  "roma-roteiro-4-dia": {
+    "html": "<br>"
+  },
+  "roma-roteiro-1-dia": {
+    "html": "<br>"
+  },
+  "roma-roteiro-2-dia": {
+    "html": "<br>"
+  },
+  "parcel-milao_bernina": {
+    "html": "3x de R$ 399,34 sem juros"
+  },
+  "parcel-bariloche": {
+    "html": "10x de R$ 424,90 sem juros"
+  },
+  "pag-item3": {
+    "html": "<br>"
+  },
+  "sobre-titulo": {
+    "html": "Somos a <span class=\"orange\">L&amp;C Viagens!</span>"
+  },
+  "hero-badge": {
+    "html": "✈ Agência de Viagens · L&amp;C Viagens"
+  },
+  "parcel-maceio": {
+    "html": "10x de R$269,00 sem juros"
   }
 }
