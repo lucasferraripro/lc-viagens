@@ -66,20 +66,27 @@
     "bariloche": {
       "parcelas": "10x de R$ 424,90 sem juros",
       "title": "Bariloche – O Paraíso da Neve",
-      "priceCartao": "4.249,00"
+      "priceCartao": "4.249,00",
+      "price": "4.037,00"
     },
     "maceio": {
       "parcelas": "10x de R$269,00 sem juros",
-      "priceCartao": "2.690,00"
+      "priceCartao": "2.690,00",
+      "duration": "5 dias / 4 noites",
+      "price": "2.556,00"
     },
     "gramado": {
       "duration": "5 dias / 4 noites",
       "title": "Gramado: Um Pedacinho da Europa no Brasil",
-      "parcelas": "10x de R$ 269,00 sem juros"
+      "parcelas": "10x de R$ 269,00 sem juros",
+      "priceCartao": "2.690,00",
+      "price": "2.556,00"
     },
     "balneario": {
       "parcelas": "10x de R$ 269,00 sem juros",
-      "title": "Balneário Camboriú: A Dubai Brasileira"
+      "title": "Balneário Camboriú: A Dubai Brasileira",
+      "priceCartao": "2.690,00",
+      "price": "2.556,00"
     }
   },
   "hero-title": {
@@ -140,7 +147,7 @@
     "html": "10x de R$269,00 sem juros"
   },
   "gramado-incluso-4": {
-    "text": "🗺 Roteiro dia a dia"
+    "text": "🗺️ Roteiro personalizado dia a dia"
   },
   "gramado-pkg-duration": {
     "html": "5 dias / 4 noites"
@@ -170,7 +177,7 @@
     "html": "10x de R$ 269,00 sem juros"
   },
   "incluso-gramado": {
-    "html": "<li>✈ Passagem aérea ida e volta</li><li>🏨 6 Diárias de hospedagem</li><li>☕ Café da manhã incluso</li><li>📋 Todas as taxas inclusas</li><li>🗺️ Roteiro personalizado dia a dia</li>"
+    "html": "<li>✈ Passagem aérea ida e volta</li><li>🏨 5 Diárias de hospedagem</li><li>☕ Café da manhã incluso</li><li>📋 Todas as taxas inclusas</li><li>🗺️ Roteiro personalizado dia a dia</li>"
   },
   "titulo-balneario": {
     "html": "Balneário Camboriú: A Dubai Brasileira"
@@ -183,5 +190,77 @@
   },
   "footer-tagline": {
     "html": "Sua viagem dos sonhos começa com a L&amp;C Viagens! ✈"
+  },
+  "balneario-pkg-price-cartao": {
+    "html": "No cartão: <strong>R$ 2.690,00</strong>"
+  },
+  "balneario-pkg-price": {
+    "html": "R$ 2.556,00"
+  },
+  "balneario-incluso-1": {
+    "text": "🏨 5 Diárias de hospedagem"
+  },
+  "balneario-incluso-2": {
+    "text": "☕ Café da manhã incluso"
+  },
+  "balneario-incluso-3": {
+    "text": "📋 Todas as taxas inclusas"
+  },
+  "balneario-incluso-4": {
+    "text": "🗺️ Roteiro personalizado dia a dia"
+  },
+  "maceio-pkg-duration": {
+    "html": "5 dias / 4 noites"
+  },
+  "maceio-pkg-price": {
+    "html": "R$ 2.556,00"
+  },
+  "maceio-incluso-1": {
+    "text": "🏨 5 Diárias de hospedagem"
+  },
+  "maceio-incluso-2": {
+    "text": "☕ Café da manhã incluso"
+  },
+  "maceio-incluso-3": {
+    "text": "📋 Todas as taxas inclusas"
+  },
+  "maceio-incluso-4": {
+    "text": "🗺️ Roteiro personalizado dia a dia"
+  },
+  "gramado-pkg-price-cartao": {
+    "html": "No cartão: <strong>R$ 2.690,00</strong>"
+  },
+  "gramado-pkg-price": {
+    "html": "R$ 2.556,00"
+  },
+  "gramado-incluso-1": {
+    "text": "🏨 5 Diárias de hospedagem"
+  },
+  "gramado-incluso-2": {
+    "text": "☕ Café da manhã incluso"
+  },
+  "gramado-incluso-3": {
+    "text": "📋 Todas as taxas inclusas"
+  },
+  "gramado-pkg-img-1": {
+    "src": "https://www.istockphoto.com/br/fotos/gramado-rio-grande-do-sul"
+  },
+  "bariloche-incluso-1": {
+    "text": "🏨 6 Diárias de hospedagem"
+  },
+  "bariloche-incluso-4": {
+    "text": "🗺️ Roteiro personalizado dia a dia"
+  },
+  "bariloche-incluso-2": {
+    "text": "☕ Café da manhã incluso"
+  },
+  "bariloche-incluso-3": {
+    "text": "📋 Taxas inclusas"
+  },
+  "bariloche-pkg-price": {
+    "html": "R$ 4.037,00"
+  },
+  "bariloche-pkg-img-1": {
+    "src": "https://www.istockphoto.com/br/fotos/bariloche"
   }
 }
