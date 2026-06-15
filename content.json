@@ -7,7 +7,7 @@
       "subtitle": "Descubra a beleza de Roma num Fiat 500 vintage. Passeie por marcos icónicos e capture o momento com fotos profissionais.",
       "location": "Roma, Italia",
       "duration": "3 horas",
-      "price": "A partir R$712,98",
+      "price": "712,98",
       "priceCartao": "R$798,56",
       "parcelas": "3x R$266,33 sem juros",
       "flag": "Italia",
@@ -64,10 +64,22 @@
       "parcelas": "3x de R$ 399,34 sem juros"
     },
     "bariloche": {
-      "parcelas": "10x de R$ 424,90 sem juros"
+      "parcelas": "10x de R$ 424,90 sem juros",
+      "title": "Bariloche – O Paraíso da Neve",
+      "priceCartao": "4.249,00"
     },
     "maceio": {
-      "parcelas": "10x de R$269,00 sem juros"
+      "parcelas": "10x de R$269,00 sem juros",
+      "priceCartao": "2.690,00"
+    },
+    "gramado": {
+      "duration": "5 dias / 4 noites",
+      "title": "Gramado: Um Pedacinho da Europa no Brasil",
+      "parcelas": "10x de R$ 269,00 sem juros"
+    },
+    "balneario": {
+      "parcelas": "10x de R$ 269,00 sem juros",
+      "title": "Balneário Camboriú: A Dubai Brasileira"
     }
   },
   "hero-title": {
@@ -126,5 +138,47 @@
   },
   "parcel-maceio": {
     "html": "10x de R$269,00 sem juros"
+  },
+  "gramado-incluso-4": {
+    "text": "🗺 Roteiro dia a dia"
+  },
+  "gramado-pkg-duration": {
+    "html": "5 dias / 4 noites"
+  },
+  "gramado-roteiro-6-title": {
+    "html": "<br>"
+  },
+  "incluso-bariloche": {
+    "html": "<li>✈ Passagem aérea ida e volta</li><li>🏨&nbsp;6 Diárias de hospedagem</li><li>☕ Café da manhã incluso</li><li>📋 Todas as taxas inclusas</li><li>🗺️ Roteiro personalizado dia a dia</li>"
+  },
+  "titulo-bariloche": {
+    "html": "Bariloche –&nbsp;O Paraíso da Neve"
+  },
+  "pix-bariloche": {
+    "html": "No cartão: <strong>R$ 4.249,00</strong>"
+  },
+  "incluso-maceio": {
+    "html": "<li>✈ Passagem aérea ida e volta</li><li>🏨&nbsp;5 diárias de hospedagem</li><li>☕ Café da manhã incluso</li><li>📋 Todas as taxas inclusas</li><li>🗺️ Roteiro personalizado dia a dia</li>"
+  },
+  "pix-maceio": {
+    "html": "No cartão: <strong>R$ 2.690,00</strong>"
+  },
+  "incluso-balneario": {
+    "html": "<li>✈ Passagem aérea ida e volta</li><li>🏨 5 Diárias de hospedagem&nbsp;</li><li>☕ Café da manhã incluso</li><li>📋 Todas as taxas inclusas</li><li>🗺️ Roteiro personalizado dia a dia</li>"
+  },
+  "parcel-balneario": {
+    "html": "10x de R$ 269,00 sem juros"
+  },
+  "incluso-gramado": {
+    "html": "<li>✈ Passagem aérea ida e volta</li><li>🏨 6 Diárias de hospedagem</li><li>☕ Café da manhã incluso</li><li>📋 Todas as taxas inclusas</li><li>🗺️ Roteiro personalizado dia a dia</li>"
+  },
+  "titulo-balneario": {
+    "html": "Balneário Camboriú: A Dubai Brasileira"
+  },
+  "titulo-gramado": {
+    "html": "Gramado: Um Pedacinho da Europa no Brasil"
+  },
+  "parcel-gramado": {
+    "html": "10x de R$ 269,00 sem juros"
   }
 }
