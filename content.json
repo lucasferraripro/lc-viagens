@@ -54,6 +54,331 @@
           "desc": ""
         }
       ]
+    },
+    "europa_2026": {
+      "category": "internacional",
+      "title": "EUROPA DOS SONHOS",
+      "subtitle": "Pacotes completos para realizar a viagem que você sempre sonhou",
+      "location": "Europa",
+      "duration": "10 dias / 9 noites",
+      "price": "R$ 9.490,00",
+      "priceCartao": "9.999,00",
+      "parcelas": "10x 999,00 sem juros",
+      "flag": "Itália / Suiça",
+      "badge": "Popular",
+      "images": [
+        "https://media.istockphoto.com/id/491391396/pt/foto/veneza.jpg?s=612x612&w=0&k=20&c=41TNhHvltP3_ESBAc3znFT1eOB0R6tCjAVKXQaJcfiI=",
+        "https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/312723/dc84d2a6998ced1b8370b2cd31fd347feuropa/0,0,1640,924/full,0.32/0/default.png",
+        "https://s1.static.brasilescola.uol.com.br/img/2019/05/paris.jpg"
+      ],
+      "desc": "Descubra castelos encantadores, cidades históricas, paisagens deslumbrantes e culturas fascinantes. Da elegância de Paris ao charme da Itália, dos Alpes Suíços aos canais da Holanda, cada destino reserva experiências inesquecíveis. Uma viagem pela Europa é a oportunidade de viver momentos únicos, conhecer lugares icônicos e criar memórias para a vida toda.",
+      "incluso": [
+        "✈️ Passagem aérea ida e volta",
+        "🏨 10 Diárias de hospedagem",
+        "☕ Café da manhã incluso",
+        "📋 Todas as taxas inclusas",
+        "🗺️ Roteiro personalizado dia a dia"
+      ],
+      "nao_incluso": [
+        "Almoços, jantares e gorjetas"
+      ],
+      "roteiro": [
+        {
+          "dia": "1º Dia",
+          "title": "Dia 1 – Chegada em Paris (França)",
+          "desc": ""
+        },
+        {
+          "dia": "2º Dia",
+          "title": "Torre Eiffel",
+          "desc": ""
+        },
+        {
+          "dia": "3º Dia",
+          "title": "Passeio pelo Rio Sena",
+          "desc": ""
+        },
+        {
+          "dia": "4º Dia",
+          "title": "Champs-Élysées",
+          "desc": ""
+        },
+        {
+          "dia": "5º Dia",
+          "title": "📍 Dia 2 – Paris",
+          "desc": ""
+        },
+        {
+          "dia": "6º Dia",
+          "title": "Museu do Louvre",
+          "desc": ""
+        },
+        {
+          "dia": "7º Dia",
+          "title": "Arco do Triunfo",
+          "desc": ""
+        },
+        {
+          "dia": "8º Dia",
+          "title": "Montmartre e Basílica de Sacré-Cœur",
+          "desc": ""
+        },
+        {
+          "dia": "9º Dia",
+          "title": "📍 Dia 3 – Paris → Milão (Itália)",
+          "desc": ""
+        },
+        {
+          "dia": "10º Dia",
+          "title": "Voo ou trem para Milão",
+          "desc": ""
+        },
+        {
+          "dia": "11º Dia",
+          "title": "Piazza Duomo",
+          "desc": ""
+        },
+        {
+          "dia": "12º Dia",
+          "title": "Galeria Vittorio Emanuele II",
+          "desc": ""
+        },
+        {
+          "dia": "13º Dia",
+          "title": "📍 Dia 4 – Milão",
+          "desc": ""
+        },
+        {
+          "dia": "14º Dia",
+          "title": "Castelo Sforzesco",
+          "desc": ""
+        },
+        {
+          "dia": "15º Dia",
+          "title": "Bairro Navigli",
+          "desc": ""
+        },
+        {
+          "dia": "16º Dia",
+          "title": "Compras e gastronomia italiana",
+          "desc": ""
+        },
+        {
+          "dia": "17º Dia",
+          "title": "📍 Dia 5 – Passeio Bernina Express",
+          "desc": ""
+        },
+        {
+          "dia": "18º Dia",
+          "title": "Milão → St. Moritz → Tirano",
+          "desc": ""
+        },
+        {
+          "dia": "19º Dia",
+          "title": "Trem panorâmico pelos Alpes Suíços",
+          "desc": ""
+        },
+        {
+          "dia": "20º Dia",
+          "title": "Retorno para Milão",
+          "desc": ""
+        },
+        {
+          "dia": "21º Dia",
+          "title": "📍 Dia 6 – Roma",
+          "desc": ""
+        },
+        {
+          "dia": "22º Dia",
+          "title": "Trem para Roma",
+          "desc": ""
+        },
+        {
+          "dia": "23º Dia",
+          "title": "Coliseu",
+          "desc": ""
+        },
+        {
+          "dia": "24º Dia",
+          "title": "Fórum Romano",
+          "desc": ""
+        },
+        {
+          "dia": "25º Dia",
+          "title": "Fontana di Trevi",
+          "desc": ""
+        },
+        {
+          "dia": "26º Dia",
+          "title": "📍 Dia 7 – Roma",
+          "desc": ""
+        },
+        {
+          "dia": "27º Dia",
+          "title": "Vaticano",
+          "desc": ""
+        },
+        {
+          "dia": "28º Dia",
+          "title": "Basílica de São Pedro",
+          "desc": ""
+        },
+        {
+          "dia": "29º Dia",
+          "title": "Praça Navona",
+          "desc": ""
+        },
+        {
+          "dia": "30º Dia",
+          "title": "Pantheon",
+          "desc": ""
+        },
+        {
+          "dia": "31º Dia",
+          "title": "📍 Dia 8 – Retorno ao Brasil",
+          "desc": ""
+        },
+        {
+          "dia": "32º Dia",
+          "title": "Tempo livre para compras e traslado ao aeroporto.",
+          "desc": ""
+        },
+        {
+          "dia": "33º Dia",
+          "title": "Um roteiro perfeito para conhecer três dos destinos mais desejados da Europa: França, Itália e Suíça, combinando história, cultura, gastronomia e paisagens inesquecíveis.",
+          "desc": ""
+        }
+      ]
+    },
+    "nordeste_2026": {
+      "category": "nacional",
+      "title": "NORDESTE DOS SONHOS",
+      "subtitle": "Praias paradisíacas, águas cristalinas e experiências inesquecíveis para toda a família.",
+      "location": "Nordeste",
+      "duration": "5 dias / 4 noites",
+      "price": "2.556,00",
+      "priceCartao": "2.690,00",
+      "parcelas": "10x 269,00 sem juros",
+      "flag": "Brasil",
+      "badge": "Oferta",
+      "images": [
+        "https://magazine.zarpo.com.br/wp-content/uploads/2020/02/o-que-fazer-em-maceio-passeios-e-pontos-turisticos-imperdiveis_zarpo-770x515.jpg",
+        "https://bahiaeconomica.com.br/wp/wp-content/uploads/2024/10/26-07-23-Ponta-Verde-Maceio-Orla-Praia-SEMTUR-foto-Jonathan-Lins-7-scaled-1.jpg",
+        "https://partiupelomundo.com/wp-content/uploads/2017/11/praia-dos-carneiros-1.jpg"
+      ],
+      "desc": "O Nordeste encanta com suas praias paradisíacas, águas cristalinas, clima agradável o ano inteiro, rica cultura e gastronomia única. De Maragogi a Jericoacoara, cada destino oferece paisagens inesquecíveis e experiências perfeitas para quem busca descanso, aventura e momentos especiais à beira-mar.",
+      "incluso": [
+        "✈️ Passagem aérea ida e volta",
+        "🏨 5 diárias de hospedagem",
+        "☕ Café da manhã incluso",
+        "📋 Todas as taxas inclusas",
+        "🗺️ Roteiro personalizado dia a dia"
+      ],
+      "nao_incluso": [
+        "Almoço, jantar e gorjetas"
+      ],
+      "roteiro": [
+        {
+          "dia": "1º Dia",
+          "title": "📍 Dia 1 – Chegada em Maceió",
+          "desc": ""
+        },
+        {
+          "dia": "2º Dia",
+          "title": "Check-in no hotel",
+          "desc": ""
+        },
+        {
+          "dia": "3º Dia",
+          "title": "Passeio pela Orla de Ponta Verde e Pajuçara",
+          "desc": ""
+        },
+        {
+          "dia": "4º Dia",
+          "title": "Pôr do sol na praia",
+          "desc": ""
+        },
+        {
+          "dia": "5º Dia",
+          "title": "📍 Dia 2 – Piscinas Naturais de Maragogi",
+          "desc": ""
+        },
+        {
+          "dia": "6º Dia",
+          "title": "Passeio de catamarã",
+          "desc": ""
+        },
+        {
+          "dia": "7º Dia",
+          "title": "Mergulho nas piscinas naturais",
+          "desc": ""
+        },
+        {
+          "dia": "8º Dia",
+          "title": "Tempo livre para aproveitar a praia",
+          "desc": ""
+        },
+        {
+          "dia": "9º Dia",
+          "title": "📍 Dia 3 – Praia do Gunga",
+          "desc": ""
+        },
+        {
+          "dia": "10º Dia",
+          "title": "Mirante do Gunga",
+          "desc": ""
+        },
+        {
+          "dia": "11º Dia",
+          "title": "Passeio de buggy",
+          "desc": ""
+        },
+        {
+          "dia": "12º Dia",
+          "title": "Falésias coloridas e banho de mar",
+          "desc": ""
+        },
+        {
+          "dia": "13º Dia",
+          "title": "📍 Dia 4 – São Miguel dos Milagres",
+          "desc": ""
+        },
+        {
+          "dia": "14º Dia",
+          "title": "Praias de águas cristalinas",
+          "desc": ""
+        },
+        {
+          "dia": "15º Dia",
+          "title": "Passeio de jangada",
+          "desc": ""
+        },
+        {
+          "dia": "16º Dia",
+          "title": "Relaxar em um dos cenários mais bonitos do Nordeste",
+          "desc": ""
+        },
+        {
+          "dia": "17º Dia",
+          "title": "📍 Dia 5 – Retorno",
+          "desc": ""
+        },
+        {
+          "dia": "18º Dia",
+          "title": "Manhã livre para compras e passeio pela orla",
+          "desc": ""
+        },
+        {
+          "dia": "19º Dia",
+          "title": "Traslado para o aeroporto",
+          "desc": ""
+        },
+        {
+          "dia": "20º Dia",
+          "title": "🌊✨ Um roteiro perfeito para conhecer algumas das praias mais bonitas do Brasil, com muito sol, mar e experiências inesquecíveis. 🏖️☀️🌴✈️",
+          "desc": ""
+        }
+      ]
     }
   },
   "__db_overrides": {
